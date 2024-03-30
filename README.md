@@ -3,7 +3,7 @@
 ![12](https://github.com/yurkyu/Sols-RNG-Macro/assets/80363046/ace26121-6e6e-4b05-b7c9-c06ce1cf6ce8)
 
 <p align="center">
-<img src="https://dcbadge.vercel.app/api/shield/788840668654338080">
+<img src="https://dcbadge.vercel.app/api/shield/960948053152501830">
 <a href="https://discord.gg/VsRMhhYYQC">
 <img src="https://dcbadge.vercel.app/api/server/VsRMhhYYQC">
 </a>
