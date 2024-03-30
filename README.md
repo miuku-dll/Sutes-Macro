@@ -5,7 +5,7 @@
 <p align="center">
 <img src="https://dcbadge.vercel.app/api/shield/788840668654338080">
 <a href="https://discord.gg/VsRMhhYYQC">
-<img src="https://dcbadge.vercel.app/api/server/HBDjf9P5sP">
+<img src="https://dcbadge.vercel.app/api/server/VsRMhhYYQC">
 </a>
 </p>
 <h3 align="center">A Light Macro For Your Needs</h3>
