@@ -161,7 +161,7 @@ namespace main
                 
             }
 
-            string RobloxPath1 = File.ReadAllText(@"C:\temp\PrivateServer.txt");
+            string RobloxPath1 = File.ReadAllText(@"./temp/PrivateServer.txt");
 
             try
             {
