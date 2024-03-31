@@ -2,33 +2,23 @@
 using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using CSInputs.ReadInput;
 using MacroForSols;
+using System.Windows.Input;
+using SharpHook;
+using SharpHook.Testing;
+using SharpHook.Native;
 
+
+namespace main
+{
 class Program
 {
-
-
+    
     static private bool _isExecutedFirst = false;
-    static private bool skip = false;
+    static private bool skip = true;
     static private bool running = false;
 
-
-
-    public static void error101() // Easier Re-using
-    {
-        Console.WriteLine("Error, Restarting...");
-        Thread.Sleep(3000);
-        Console.Clear();
-    }
-
-    public static void printMenu(String[] options)
-    {
-        foreach (String option in options)
-        {
-            Console.WriteLine(option);
-        }
-        Console.Write("Choose your option : ");
-    }
 
 
     public static void GoodMorning(String[] options)
@@ -203,15 +193,15 @@ class Program
 
 
 
-
     public static void Main(string[] args)
     {
-
+        MenuCollection menus = MenuGenerator.CreateMenuCollection();
         if (skip)
         {
             skip = false;
-            goto SKIPPED;
+                goto Skipped;
         }
+
         else
         {
 
@@ -230,93 +220,39 @@ class Program
             Console.WriteLine("Failed to launch.");
         }
 
+       Skipped:
+        menus.ShowMenu(1);
+        Console.ReadKey();
 
-    SKIPPED:
-        Console.WriteLine("Select a option");
-        String[] options = {" 1- Option 1",
-                            " 2- Option 2",
-                            " 3- Option 3",
-                            " 4- Option 4",
-                            " 5- Exit",
-                                };
-
-        int option = 0;
-        while (true)
-        {
-            printMenu(options);
-            try
-            {
-                option = Convert.ToInt32(Console.ReadLine());
-            }
-            catch (System.FormatException)
-            {
-                Console.WriteLine("Please enter an integer value between 1 and " + options.Length);
-                continue;
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("An unexpected error happened. Please try again");
-                //Console.WriteLine(ex);
-                continue;
-            }
-            switch (option)
-            {
-                case 1:
-                    option1();
-                    break;
-                case 2:
-                    option2();
-                    break;
-                case 3:
-                    option3();
-                    break;
-                case 4:
-                    option4();
-                    break;
-                case 5:
-                    Environment.Exit(0);
-                    break;
-                default:
-                    Console.WriteLine("Please enter an integer value between 1 and " + options.Length);
-                    break;
-            }
-
-        }
     }
 
+ 
 
-    private static void option4()
+        public static void option2()
     {
-        Console.WriteLine("Executing option 4");
-        Thread.Sleep(1000);
+        running = true;
+        Console.WriteLine(running);
         Console.Clear();
-    }
 
-    private static void option3()
-    {
-        Console.WriteLine("Executing option 3");
+        Program.Focus();
         Thread.Sleep(1000);
-        Console.Clear();
-    }
 
-    private static void option2()
-    {
-        Console.WriteLine("Executing option 2");
-        Thread.Sleep(1000);
+        Util.GildedCraft();
         Console.Clear();
+        running = false;
     }
 
     [DllImport("user32.dll", SetLastError = true)]
     [return: MarshalAs(UnmanagedType.Bool)]
-    public static extern bool SetForegroundWindow(IntPtr hWnd);
+        public static extern bool SetForegroundWindow(IntPtr hWnd);
 
-    private static void Focus()
+        public static void Focus()
     {
         Process[] processes = Process.GetProcessesByName("RobloxPlayerBeta");
         SetForegroundWindow(processes[0].MainWindowHandle);
     }
 
-    private static void option1()
+        public static void option1()
     {
         running = true;
         Console.WriteLine(running);
@@ -327,17 +263,10 @@ class Program
 
         try
         {
-            Console.WriteLine("Resetting...");
-            MacroForSols.Util.ResetPos();
-            Console.WriteLine("Done...");
-            Console.WriteLine("Starting Collecting 1...");
-            MacroForSols.Util.Collect1();
-            Console.WriteLine("Done...");
-            Console.WriteLine("Starting Collecting 2...");
-            MacroForSols.Util.Collect2();
-            Console.WriteLine("Done...");
-            Thread.Sleep(2000);
-            Console.Clear();
+                Util.AutoCollect();
+
+
+                Console.WriteLine("Loop ended");
         }
         catch
         {
@@ -351,6 +280,7 @@ class Program
 
     
 
-}
+    }
 
+}
 
