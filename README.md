@@ -16,7 +16,7 @@ If you have knowledge of c#, you can edit source of Nyaboo and create a pull req
 
 ## How to install?
 For installation help please refer to
-[Installation Guide](https://github.com/yurkyu/sutes-macro/info/Info.MD)
+[Installation Guide](https://github.com/yurkyu/Sutes-Macro/blob/master/Info/Info.md)
 
 ## How to build?
 To edit the application, first re-build the project, for any reason, then the intellisense should load. The views can be found under MVVM-Views<.
