@@ -10,7 +10,7 @@
 </p>
 
 ## How to build? <br>
-To edit the application, first re-build the project, for any reason, then the intellisense should load.<.<br>
+To edit the application, first re-build the project, for any reason, then the intellisense should load.<br>
 - Clone the repo `gh repo clone yurkyu/Sutes-Macro`<br>
 - Open SutesMacro.sln in Visual Studio 2022.<br>
 - Set Release x64<br>
