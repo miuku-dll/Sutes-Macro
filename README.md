@@ -10,9 +10,9 @@
 </p>
 <h3 align="center">A Light Macro For Your Needs</h3>
 
-Sute's Macro, is a free personal macro under the name of Nyaboo, minimal and easy to use. <br>
+Sute's Macro, is a free personal macro under the name of Sute's Macro, minimal and easy to use. <br>
 For more info refer to [Learn More](https://github.com/yurkyu?tab=repositories). <br>
-If you have knowledge of c#, you can edit source of Nyaboo and create a pull request. <br>
+If you have knowledge of c#, you can edit source of Sute's Macro and create a pull request. <br>
 
 ## How to install?
 For installation help please refer to
@@ -40,10 +40,6 @@ Created by the necessity to have a open-source and easy to use macro for <bold>l
 ### Error codes (For support / debugging) [not important for users]
 ```
 .\Error code 101  (Failed to find a executeable to save)
-.\Error code 102  (Failed to save executeable to config)
-.\Error code 103  (Failed to start bookmarked application)
-.\Error code 104  (Failed to bookmark application)
-.\Error code 105  (Failed to copy bookmark image)
 ```
 
 
