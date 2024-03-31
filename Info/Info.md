@@ -22,7 +22,7 @@ To install the built application first<br>
 - [Join our discord](https://discord.gg/VsRMhhYYQC)<br>
 - Head to Macros > Sols-RNG and download the most recent version from pinned messages.<br>
 - Extract the .ZIP using [Winrar](https://www.win-rar.com/start.html?&L=0)<br>
-- Run the .exe file as Administrator
+- Run the .exe file as Administrator<br>
  And now you should be good to go!
 
 
