@@ -1,17 +1,16 @@
-﻿using CSInputs;
-using CSInputs.Enums;
-using System;
-using SharpHook.Native;
-using SharpHook;
-using System.Net;
+﻿using System;
 using System.IO;
-using main;
+using System.Net;
 using System.Windows.Shapes;
+using CSInputs;
+using CSInputs.Enums;
+using main;
+using SharpHook;
+using SharpHook.Native;
 
 namespace MacroForSols
 {
-
-    internal class Util
+    internal class Util // This class handles almost everything from Movement to Webhooks
     {
         string Webhook1 = File.ReadAllText(@"./Config/Webhook.txt");
 
@@ -25,8 +24,7 @@ namespace MacroForSols
             wr.GetResponse();
         }
 
-
-        static private bool crafting = false;
+        private static bool crafting = false;
 
         public static void Reset()
         {
@@ -64,7 +62,6 @@ namespace MacroForSols
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Up);
             Thread.Sleep(500);
         } //CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Return,KeyFlags.Down);
-
 
         public static void Collect12()
         {
@@ -108,21 +105,16 @@ namespace MacroForSols
             Console.WriteLine("Done collecting items");
             Thread.Sleep(300);
 
-
-
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Down);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Up);
-        } 
-
-   
+        }
 
         public static void Collect3()
         {
-
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Down);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Up);
 
-            ResetPos();    
+            ResetPos();
             Console.WriteLine("Moving to collection area");
             WebhookMovingToArea();
             Thread.Sleep(500);
@@ -238,7 +230,6 @@ namespace MacroForSols
             Thread.Sleep(300);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Down);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Up);
-
         }
 
         public static void Collect5()
@@ -288,12 +279,9 @@ namespace MacroForSols
             Console.WriteLine("Done collecting items");
             Thread.Sleep(300);
 
-
-
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Down);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Up);
         }
-
 
         public static void GildedCraft()
         {
@@ -302,7 +290,6 @@ namespace MacroForSols
         startcraft:
             if (crafting)
             {
-
                 Console.WriteLine("Resetting store position");
                 simulator.SimulateMouseMovement(334, 889);
                 Thread.Sleep(50);
@@ -315,9 +302,10 @@ namespace MacroForSols
                 for (; ; )
                 {
                     simulator.SimulateMouseWheel(
-                    rotation: 420,
-                    direction: MouseWheelScrollDirection.Vertical, // Vertical by default
-                    type: MouseWheelScrollType.UnitScroll); // UnitScroll by default
+                        rotation: 420,
+                        direction: MouseWheelScrollDirection.Vertical, // Vertical by default
+                        type: MouseWheelScrollType.UnitScroll
+                    ); // UnitScroll by default
                     Thread.Sleep(200);
                     i++;
                     if (i > 4)
@@ -328,9 +316,10 @@ namespace MacroForSols
                 for (; ; )
                 {
                     simulator.SimulateMouseWheel(
-                    rotation: -420,
-                    direction: MouseWheelScrollDirection.Vertical, // Vertical by default
-                    type: MouseWheelScrollType.UnitScroll); // UnitScroll by default
+                        rotation: -420,
+                        direction: MouseWheelScrollDirection.Vertical, // Vertical by default
+                        type: MouseWheelScrollType.UnitScroll
+                    ); // UnitScroll by default
                     Thread.Sleep(200);
                     i++;
                     if (i > 8)
@@ -430,15 +419,13 @@ namespace MacroForSols
             Console.Clear();
             menus.ShowMenu(3);
             Console.ReadKey();
-
-            
         }
+
         public static void Keybind()
         {
             Console.Write("Abort Keybind: (Currently Not Working) ");
             var KeybindKey = Console.ReadLine();
         }
-
 
         public static void AutoCollect()
         {
@@ -454,29 +441,42 @@ namespace MacroForSols
 
         public static void WebhookReset()
         {
-            sendDiscordWebhook(File.ReadAllText(@"C:\temp\sutesconfig.txt"),
-          "{\"username\": \"Sute's Macro\",\"embeds\":[    {\"description\":\"Reset Character\", \"title\":\"\", \"color\":16723502}]  }");
+            sendDiscordWebhook(
+                File.ReadAllText(@"C:\temp\sutesconfig.txt"),
+                "{\"username\": \"Sute's Macro\",\"embeds\":[    {\"description\":\"Reset Character\", \"title\":\"\", \"color\":16723502}]  }"
+            );
         }
+
         public static void WebhookCollecting()
         {
-            sendDiscordWebhook(File.ReadAllText(@"C:\temp\sutesconfig.txt"),
-          "{\"username\": \"Sute's Macro\",\"embeds\":[    {\"description\":\"Collecting Items\", \"title\":\"\", \"color\":1184274}]  }");
+            sendDiscordWebhook(
+                File.ReadAllText(@"C:\temp\sutesconfig.txt"),
+                "{\"username\": \"Sute's Macro\",\"embeds\":[    {\"description\":\"Collecting Items\", \"title\":\"\", \"color\":1184274}]  }"
+            );
         }
+
         public static void WebhookResetCharacter()
         {
-            sendDiscordWebhook(File.ReadAllText(@"C:\temp\sutesconfig.txt"),
-          "{\"username\": \"Sute's Macro\",\"embeds\":[    {\"description\":\"Resetting Character Position\", \"title\":\"\", \"color\":2039583}]  }");
+            sendDiscordWebhook(
+                File.ReadAllText(@"C:\temp\sutesconfig.txt"),
+                "{\"username\": \"Sute's Macro\",\"embeds\":[    {\"description\":\"Resetting Character Position\", \"title\":\"\", \"color\":2039583}]  }"
+            );
         }
+
         public static void WebhookMovingToArea()
         {
-            sendDiscordWebhook(File.ReadAllText(@"C:\temp\sutesconfig.txt"),
-          "{\"username\": \"Sute's Macro\",\"embeds\":[    {\"description\":\"Moving to next area\", \"title\":\"\", \"color\":6284940}]  }");
+            sendDiscordWebhook(
+                File.ReadAllText(@"C:\temp\sutesconfig.txt"),
+                "{\"username\": \"Sute's Macro\",\"embeds\":[    {\"description\":\"Moving to next area\", \"title\":\"\", \"color\":6284940}]  }"
+            );
         }
+
         public static void WebhookJack()
         {
-            sendDiscordWebhook(File.ReadAllText(@"C:\temp\sutesconfig.txt"),
-          "{\"username\": \"Sute's Macro\",\"embeds\":[    {\"description\":\"Moving to Jake's Workshop\", \"title\":\"\", \"color\":16774912}]  }");
+            sendDiscordWebhook(
+                File.ReadAllText(@"C:\temp\sutesconfig.txt"),
+                "{\"username\": \"Sute's Macro\",\"embeds\":[    {\"description\":\"Moving to Jake's Workshop\", \"title\":\"\", \"color\":16774912}]  }"
+            );
         }
     }
-
 }

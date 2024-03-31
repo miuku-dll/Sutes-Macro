@@ -7,7 +7,7 @@ using MacroForSols;
 
 namespace MacroForSols
 {
-    internal class Error
+    internal class Error // Class currently not in use
     {
 
         public static void E101() // Easier Re-using
