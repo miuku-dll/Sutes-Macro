@@ -8,6 +8,7 @@ using System.Windows.Input;
 using SharpHook;
 using SharpHook.Testing;
 using SharpHook.Native;
+using System.Text;
 
 
 namespace main
@@ -25,7 +26,33 @@ class Program
         {
             try
             {
-                System.IO.Directory.CreateDirectory(@"C:\temp\PrivateServer.txt");
+                var PrivateServerFile = "./config/PrivateServer.txt";
+
+                if (!Directory.Exists("./config/"))
+                {
+                    // Try to create the directory.
+                    DirectoryInfo di = Directory.CreateDirectory("./config");
+                }
+                else
+                {
+                    
+                    Console.WriteLine("Added Path...");
+                }
+
+                if (File.Exists(PrivateServerFile))
+                {
+                    goto Address;
+                }
+                else
+                {
+                    using (FileStream fs = File.Create(PrivateServerFile))
+                    {
+                        char[] value = "".ToCharArray();
+                        fs.Write(Encoding.UTF8.GetBytes(value), 0, value.Length);
+                    }
+                }
+
+                Console.WriteLine("Done Checking Folder...");
             }
             catch { }
 
@@ -39,18 +66,18 @@ class Program
             Console.WriteLine(" \\______/  \\______/    \\___/   \\_______/|_______/       |__/     |__/ \\_______/ \\_______/|__/       \\______/ ");
 
 
-            Thread.Sleep(4000);
+            Thread.Sleep(2500);
             Console.Clear();
 
         Address:
 
             SetLink:
-                string CheckPath = File.ReadAllText(@"C:\temp\PrivateServer.txt");
+                string CheckPath = File.ReadAllText(@".\Config\PrivateServer.txt");
                 if (CheckPath.Contains("roblox.com/share", StringComparison.OrdinalIgnoreCase))
                 {
                 Console.Clear();
                 Console.WriteLine("Existing link found (Link can be changed in settings)");
-                Thread.Sleep(2000);
+                Thread.Sleep(1000);
                 goto CorrectAddress;
                 }
                 else
@@ -59,19 +86,35 @@ class Program
                     var Path = Console.ReadLine(); // Too lazy to find out myself for now
                     Console.Clear();
 
-                    using (StreamWriter writer = new StreamWriter(@"C:\temp\PrivateServer.txt"))
+                try
+                {
+                    using (FileStream fs = File.Create(@".\Config\PrivateServer.txt"))
                     {
-                        writer.WriteLine(Path);
+                        char[] value = Path.ToCharArray();
+                        fs.Write(Encoding.UTF8.GetBytes(value), 0, value.Length);
                     }
-                    Console.Clear();
+                }
+                catch
+                { 
+                }
 
-                    string RobloxPath = File.ReadAllText(@"C:\temp\PrivateServer.txt");
-                    Thread.Sleep(200);
-                    Console.WriteLine("Private Server Address: " + RobloxPath);
+                if (CheckPath.Contains("roblox.com/share", StringComparison.OrdinalIgnoreCase))
+                {
                     Thread.Sleep(2000);
                     Console.Clear();
                     goto SetLink;
                 }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("Invalid Private server address...");
+                    Thread.Sleep(1000);
+                    Console.WriteLine("Restarting Process...");
+                    Thread.Sleep(250);
+                    Console.Clear();
+                    goto SetLink;
+                }
+            }
             
             
 
