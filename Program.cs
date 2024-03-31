@@ -23,6 +23,11 @@ class Program
 
         public static void GoodMorning(String[] options)
         {
+            try
+            {
+                System.IO.Directory.CreateDirectory(@"C:\temp\PrivateServer.txt");
+            }
+            catch { }
 
             Console.WriteLine("  /$$$$$$              /$$              /$$              /$$      /$$                                        ");
             Console.WriteLine(" /$$__  $$            | $$             | $/             | $$$    /$$$                                        ");
