@@ -22,8 +22,6 @@ To edit the application, first re-build the project, for any reason, then the in
 - Set Release x64
 - Ctrl + Shift + B (build)
 
-### Don't ask why half of the commits are 'useless'.
-
 ## Showcase
 
 [![Demo](https://cdn.discordapp.com/attachments/1115532270892240939/1125133952512962590/demo5.gif)](https://cdn.discordapp.com/attachments/1115532270892240939/1125133656206348378/2023-07-02_21-37-13.mp4)
