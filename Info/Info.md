@@ -8,12 +8,13 @@
 <img src="https://dcbadge.vercel.app/api/server/VsRMhhYYQC">
 </a>
 </p>
-## How to build?
-To edit the application, first re-build the project, for any reason, then the intellisense should load. The views can be found under MVVM-Views<.
-- Clone the repo `gh repo clone yurkyu/Sols-RNG-Macro`
-- Open SutesMacro.sln in Visual Studio 2022.
-- Set Release x64
-- Ctrl + Shift + B (build)
+
+## How to build? <br>
+To edit the application, first re-build the project, for any reason, then the intellisense should load.<.<br>
+- Clone the repo `gh repo clone yurkyu/Sutes-Macro`<br>
+- Open SutesMacro.sln in Visual Studio 2022.<br>
+- Set Release x64<br>
+- Ctrl + Shift + B (build)<br>
 
 
 ### Screenshots
