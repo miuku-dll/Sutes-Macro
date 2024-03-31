@@ -13,7 +13,7 @@ namespace MacroForSols
 
     internal class Util
     {
-        string Webhook1 = File.ReadAllText(@"C:\temp\sutesconfig.txt");
+        string Webhook1 = File.ReadAllText(@"./Config/Webhook.txt");
 
         public static void sendDiscordWebhook(string URL, string escapedjson)
         {
@@ -420,12 +420,12 @@ namespace MacroForSols
             MenuCollection menus = MenuGenerator.CreateMenuCollection();
             Console.Write("Webhook: ");
             var webhooklink = Console.ReadLine();
-            using (StreamWriter writer = new StreamWriter(@"C:\temp\sutesconfig.txt"))
+            using (StreamWriter writer = new StreamWriter(@"./config/Webhook.txt"))
             {
                 writer.WriteLine(webhooklink);
             }
             Console.Clear();
-            string Webhook1 = File.ReadAllText(@"C:\temp\sutesconfig.txt");
+            string Webhook1 = File.ReadAllText(@"./Config/Webhook.txt");
             Thread.Sleep(1000);
             Console.WriteLine("Your webhook: " + Webhook1);
             Thread.Sleep(1000);

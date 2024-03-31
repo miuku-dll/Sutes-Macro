@@ -9,6 +9,7 @@ using SharpHook;
 using SharpHook.Testing;
 using SharpHook.Native;
 using System.Text;
+using System.Windows.Documents;
 
 
 namespace main
@@ -27,16 +28,18 @@ class Program
             try
             {
                 var PrivateServerFile = "./config/PrivateServer.txt";
+                var WebhookLocation = "./config/Webhook.txt";
 
                 if (!Directory.Exists("./config/"))
                 {
-                    // Try to create the directory.
+                    // Try to create the Path.
                     DirectoryInfo di = Directory.CreateDirectory("./config");
+                    Console.WriteLine("Path Created...");
                 }
                 else
                 {
                     
-                    Console.WriteLine("Added Path...");
+                    
                 }
 
                 if (File.Exists(PrivateServerFile))
@@ -45,7 +48,13 @@ class Program
                 }
                 else
                 {
+                    Console.WriteLine("Adding Files...");
                     using (FileStream fs = File.Create(PrivateServerFile))
+                    {
+                        char[] value = "".ToCharArray();
+                        fs.Write(Encoding.UTF8.GetBytes(value), 0, value.Length);
+                    }
+                    using (FileStream fs = File.Create(WebhookLocation))
                     {
                         char[] value = "".ToCharArray();
                         fs.Write(Encoding.UTF8.GetBytes(value), 0, value.Length);
@@ -53,9 +62,12 @@ class Program
                 }
 
                 Console.WriteLine("Done Checking Folder...");
+                Thread.Sleep(1000);
+                Console.Clear();
             }
             catch { }
 
+        Address:
             Console.WriteLine("  /$$$$$$              /$$              /$$              /$$      /$$                                        ");
             Console.WriteLine(" /$$__  $$            | $$             | $/             | $$$    /$$$                                        ");
             Console.WriteLine("| $$  \\__/ /$$   /$$ /$$$$$$    /$$$$$$|_//$$$$$$$      | $$$$  /$$$$  /$$$$$$   /$$$$$$$  /$$$$$$   /$$$$$$ ");
@@ -68,8 +80,6 @@ class Program
 
             Thread.Sleep(2500);
             Console.Clear();
-
-        Address:
 
             SetLink:
                 string CheckPath = File.ReadAllText(@".\Config\PrivateServer.txt");
@@ -320,8 +330,23 @@ class Program
 
         public static void Focus()
     {
-        Process[] processes = Process.GetProcessesByName("RobloxPlayerBeta");
-        SetForegroundWindow(processes[0].MainWindowHandle);
+            MenuCollection menus = MenuGenerator.CreateMenuCollection();
+            try
+            {
+                Process[] processes = Process.GetProcessesByName("RobloxPlayerBeta");
+                SetForegroundWindow(processes[0].MainWindowHandle);
+            }
+            catch 
+            {
+                Console.WriteLine("Roblox is not running");
+                Thread.Sleep(1000);
+                Console.WriteLine("Returning to Idle...");
+                Thread.Sleep(1000);
+                Console.Clear();
+                menus.ShowMenu(2);
+                Console.ReadKey();
+            }   
+        
     }
 
         public static void option1()
