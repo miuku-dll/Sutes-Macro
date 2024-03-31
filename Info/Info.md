@@ -25,5 +25,5 @@ To install the built application first<br>
 - Run the .exe file as Administrator<br>
 <br>
 
-### Make sure you have these files before running the .exe <br><br>
+### Make sure you have these files before running the .exe <br>
 <img src="https://media.discordapp.net/attachments/1167612844779503642/1224074203032981645/Screenshot_39.png?ex=661c2af0&is=6609b5f0&hm=5b5626a7c1e0c3b4910be98e130b37bbbc9b548d42c91b3770b9320c96d9ebe8&=&format=webp&quality=lossless" width="600px">
