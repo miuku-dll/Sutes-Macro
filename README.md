@@ -15,7 +15,7 @@ For more info refer to [Learn More](https://github.com/yurkyu?tab=repositories).
 If you have knowledge of c#, you can edit source of Nyaboo and create a pull request. <br>
 
 ## How to install?
-For installation help please refer to V
+For installation help please refer to
 [Installation Guide](https://github.com/yurkyu/sutes-macro/info/Info.MD)
 
 ## How to build?
