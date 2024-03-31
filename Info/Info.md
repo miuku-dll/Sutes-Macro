@@ -26,4 +26,4 @@ To install the built application first<br>
 <br>
 
 ### Make sure you have these files before running the .exe <br>
-<img src="https://media.discordapp.net/attachments/1167612844779503642/1224074203032981645/Screenshot_39.png?ex=661c2af0&is=6609b5f0&hm=5b5626a7c1e0c3b4910be98e130b37bbbc9b548d42c91b3770b9320c96d9ebe8&=&format=webp&quality=lossless" width="900px">
+<img src="https://media.discordapp.net/attachments/1167612844779503642/1224074935027109898/Screenshot_40.png?ex=661c2b9e&is=6609b69e&hm=5ecb7cb6536f98634b8885afb51f24884eb17bf8f0136a95693b0500156405d0&=&format=webp&quality=lossless" width="900px">
