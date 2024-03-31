@@ -26,4 +26,5 @@ To install the built application first<br>
 <br>
 
 ### Make sure you have these files before running the .exe <br>
-<img src="https://media.discordapp.net/attachments/1167612844779503642/1224074935027109898/Screenshot_40.png?ex=661c2b9e&is=6609b69e&hm=5ecb7cb6536f98634b8885afb51f24884eb17bf8f0136a95693b0500156405d0&=&format=webp&quality=lossless" width="900px">
+![Screenshot_41](https://github.com/yurkyu/Sutes-Macro/assets/80363046/3df3cd89-df4a-4a35-8488-a843ba76a68a)
+
