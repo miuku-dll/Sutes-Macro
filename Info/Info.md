@@ -24,9 +24,5 @@ To install the built application first<br>
 - Extract the .ZIP using [Winrar](https://www.win-rar.com/start.html?&L=0)<br>
 - Run the .exe file as Administrator<br>
 
-And now you should be good to go!
-
-
-### Screenshots
-<img src="https://media.discordapp.net/attachments/1167612844779503642/1224074202735448185/Screenshot_38.png?ex=661c2af0&is=6609b5f0&hm=cfbcab3cb8ca9622b6c4f61d51959e34dceb7e3df1988b3438c3b8076f6ed11e&=&format=webp&quality=lossless" width="600px">
+Make sure you have these files before running the .exe!
 <img src="https://media.discordapp.net/attachments/1167612844779503642/1224074203032981645/Screenshot_39.png?ex=661c2af0&is=6609b5f0&hm=5b5626a7c1e0c3b4910be98e130b37bbbc9b548d42c91b3770b9320c96d9ebe8&=&format=webp&quality=lossless" width="600px">
