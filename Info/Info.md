@@ -17,6 +17,15 @@ To edit the application, first re-build the project, for any reason, then the in
 - Ctrl + Shift + B (build)<br>
 
 
+## How to install? <br>
+To install the built application first<br>
+- [Join our discord](https://discord.gg/VsRMhhYYQC)<br>
+- Head to Macros > Sols-RNG and download the most recent version from pinned messages.<br>
+- Extract the .ZIP using [Winrar](https://www.win-rar.com/start.html?&L=0)<br>
+- Run the .exe file as Administrator
+And now you should be good to go!
+
+
 ### Screenshots
 <img src="https://media.discordapp.net/attachments/1115532270892240939/1125134464570376343/Screenshot_270.png?width=753&height=493" width="600px">
 <img src="https://media.discordapp.net/attachments/1115532270892240939/1125134464889127023/Screenshot_271.png?width=764&height=493" width="600px">
