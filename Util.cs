@@ -49,7 +49,7 @@ namespace MacroForSols
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Return);
             Console.WriteLine("Reset Character");
             WebhookReset();
-            Thread.Sleep(4000);
+            Thread.Sleep(2500);
             Console.WriteLine("Moving to lava to reset position");
             WebhookResetCharacter();
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Down);
@@ -62,7 +62,7 @@ namespace MacroForSols
             Thread.Sleep(500);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.A, KeyFlags.Up);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Up);
-            Thread.Sleep(3000);
+            Thread.Sleep(500);
         } //CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Return,KeyFlags.Down);
 
 
@@ -90,10 +90,10 @@ namespace MacroForSols
             Thread.Sleep(100);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
             Console.WriteLine("Done collecting items");
-            Thread.Sleep(1000);
+            Thread.Sleep(300);
 
             Console.WriteLine("Moving to next area");
-            Thread.Sleep(500);
+            Thread.Sleep(300);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Down);
             Thread.Sleep(4800);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Up);
@@ -106,7 +106,7 @@ namespace MacroForSols
             Thread.Sleep(100);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
             Console.WriteLine("Done collecting items");
-            Thread.Sleep(1000);
+            Thread.Sleep(300);
 
 
 
@@ -148,7 +148,7 @@ namespace MacroForSols
             Thread.Sleep(100);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
             Console.WriteLine("Done collecting area...");
-            Thread.Sleep(3000);
+            Thread.Sleep(300);
             Console.WriteLine("Moving to next area");
             WebhookMovingToArea();
 
@@ -177,7 +177,7 @@ namespace MacroForSols
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
             Console.WriteLine("Done collecting area...");
 
-            Thread.Sleep(3000);
+            Thread.Sleep(300);
             Console.WriteLine("Moving to next area");
             WebhookMovingToArea();
 
@@ -199,7 +199,7 @@ namespace MacroForSols
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Down);
             Thread.Sleep(3000);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Up);
-            Thread.Sleep(500);
+            Thread.Sleep(300);
             Console.WriteLine("Collecting items");
             WebhookCollecting();
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
@@ -209,7 +209,7 @@ namespace MacroForSols
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
 
             Console.WriteLine("Done collecting area...");
-            Thread.Sleep(1000);
+            Thread.Sleep(300);
             Console.WriteLine("Moving to next area");
             WebhookMovingToArea();
 
@@ -235,9 +235,7 @@ namespace MacroForSols
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
 
             Console.WriteLine("Done collecting area...");
-            Thread.Sleep(3000);
-            Console.WriteLine("Moving to next area");
-            Thread.Sleep(500);
+            Thread.Sleep(300);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Down);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Up);
 
@@ -288,7 +286,7 @@ namespace MacroForSols
             Thread.Sleep(100);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
             Console.WriteLine("Done collecting items");
-            Thread.Sleep(1000);
+            Thread.Sleep(300);
 
 
 
@@ -410,14 +408,6 @@ namespace MacroForSols
                 Thread.Sleep(1000);
                 simulator.SimulateMousePress(MouseButton.Button1);
                 simulator.SimulateMouseRelease(MouseButton.Button1);
-
-
-
-
-
-
-
-
                 Console.WriteLine("Crafting...");
 
                 crafting = true;

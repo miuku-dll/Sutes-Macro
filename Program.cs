@@ -16,36 +16,60 @@ class Program
 {
     
     static private bool _isExecutedFirst = false;
-    static private bool skip = true;
+    static private bool skip = false;
     static private bool running = false;
 
 
 
-    public static void GoodMorning(String[] options)
-    {
-
-
-        Console.WriteLine("Good Morning Baby!");
-        Thread.Sleep(2000);
-        Console.Clear();
-    Address:
-        Console.Write("Private Server Address: ");
-        var Path = Console.ReadLine(); // Too lazy to find out myself for now
-
-        if (Path.Contains("roblox.com/share", StringComparison.OrdinalIgnoreCase))
+        public static void GoodMorning(String[] options)
         {
-            goto CorrectAddress;
-        }
-        else
-        {
-            Error.E102();
-            Console.WriteLine("Check your entered address: " + Path);
-            Console.WriteLine(" ");
-            goto Address;
-        }
 
-        Thread.Sleep(1000);
-        Console.Clear();
+            Console.WriteLine("  /$$$$$$              /$$              /$$              /$$      /$$                                        ");
+            Console.WriteLine(" /$$__  $$            | $$             | $/             | $$$    /$$$                                        ");
+            Console.WriteLine("| $$  \\__/ /$$   /$$ /$$$$$$    /$$$$$$|_//$$$$$$$      | $$$$  /$$$$  /$$$$$$   /$$$$$$$  /$$$$$$   /$$$$$$ ");
+            Console.WriteLine("|  $$$$$$ | $$  | $$|_  $$_/   /$$__  $$ /$$_____/      | $$ $$/$$ $$ |____  $$ /$$_____/ /$$__  $$ /$$__  $$");
+            Console.WriteLine(" \\____  $$| $$  | $$  | $$    | $$$$$$$$|  $$$$$$       | $$  $$$| $$  /$$$$$$$| $$      | $$  \\__/| $$  \\ $$");
+            Console.WriteLine(" /$$  \\ $$| $$  | $$  | $$ /$$| $$_____/ \\____  $$      | $$\\  $ | $$ /$$__  $$| $$      | $$      | $$  | $$");
+            Console.WriteLine("|  $$$$$$/|  $$$$$$/  |  $$$$/|  $$$$$$$ /$$$$$$$/      | $$ \\/  | $$|  $$$$$$$|  $$$$$$$| $$      |  $$$$$$/");
+            Console.WriteLine(" \\______/  \\______/    \\___/   \\_______/|_______/       |__/     |__/ \\_______/ \\_______/|__/       \\______/ ");
+
+
+            Thread.Sleep(4000);
+            Console.Clear();
+
+        Address:
+
+            SetLink:
+                string CheckPath = File.ReadAllText(@"C:\temp\PrivateServer.txt");
+                if (CheckPath.Contains("roblox.com/share", StringComparison.OrdinalIgnoreCase))
+                {
+                Console.Clear();
+                Console.WriteLine("Existing link found (Link can be changed in settings)");
+                Thread.Sleep(2000);
+                goto CorrectAddress;
+                }
+                else
+                {
+                    Console.Write("Private Server Address: ");
+                    var Path = Console.ReadLine(); // Too lazy to find out myself for now
+                    Console.Clear();
+
+                    using (StreamWriter writer = new StreamWriter(@"C:\temp\PrivateServer.txt"))
+                    {
+                        writer.WriteLine(Path);
+                    }
+                    Console.Clear();
+
+                    string RobloxPath = File.ReadAllText(@"C:\temp\PrivateServer.txt");
+                    Thread.Sleep(200);
+                    Console.WriteLine("Private Server Address: " + RobloxPath);
+                    Thread.Sleep(2000);
+                    Console.Clear();
+                    goto SetLink;
+                }
+            
+            
+
 
     CorrectAddress:
 
@@ -85,7 +109,7 @@ class Program
         }
 
 
-
+            string RobloxPath1 = File.ReadAllText(@"C:\temp\PrivateServer.txt");
 
         try
         {
@@ -96,7 +120,7 @@ class Program
 
                     UseShellExecute = true,
                     FileName = "vivaldi",
-                    Arguments = Path
+                    Arguments = RobloxPath1
                 });
 
             }
@@ -111,7 +135,7 @@ class Program
                     {
                         UseShellExecute = true,
                         FileName = "chrome",
-                        Arguments = Path
+                        Arguments = RobloxPath1
                     });
                 }
                 catch
@@ -125,7 +149,7 @@ class Program
                         {
                             UseShellExecute = true,
                             FileName = "edge",
-                            Arguments = Path
+                            Arguments = RobloxPath1
                         });
 
                     }
