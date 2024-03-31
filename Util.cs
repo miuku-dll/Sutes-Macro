@@ -454,6 +454,15 @@ namespace MacroForSols
             }
         }
 
+        public static void AutoCraft() 
+        {
+            for (; ; )
+            {
+                GildedCraft();
+                Console.WriteLine("Loop Done");
+            }
+        }
+
         public static void WebhookReset()
         {
             sendDiscordWebhook(File.ReadAllText(@"C:\temp\sutesconfig.txt"),

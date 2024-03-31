@@ -8,6 +8,8 @@ using System.Windows.Input;
 using SharpHook;
 using SharpHook.Testing;
 using SharpHook.Native;
+using System.Net.Http;
+using System.Windows.Media.TextFormatting;
 
 
 namespace main
@@ -23,6 +25,16 @@ class Program
 
         public static void GoodMorning(String[] options)
         {
+            try
+            {
+                System.IO.Directory.CreateDirectory(@"C:\temp\PrivateServer.txt");
+            }
+            catch 
+            {
+
+            }   
+            
+           
 
             Console.WriteLine("  /$$$$$$              /$$              /$$              /$$      /$$                                        ");
             Console.WriteLine(" /$$__  $$            | $$             | $/             | $$$    /$$$                                        ");
