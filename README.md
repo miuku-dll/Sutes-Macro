@@ -10,9 +10,9 @@
 </p>
 <h3 align="center">A Light Macro For Your Needs</h3>
 
-Sute's Macro, is a free personal macro under the name of Nyaboo, minimal and easy to use. <br>
+Sute's Macro, is a free personal macro under the name of Sute's Macro, minimal and easy to use. <br>
 For more info refer to [Learn More](https://github.com/yurkyu?tab=repositories). <br>
-If you have knowledge of c#, you can edit source of Nyaboo and create a pull request. <br>
+If you have knowledge of c#, you can edit source of Sute's Macro and create a pull request. <br>
 
 ## How to install?
 For installation help please refer to
@@ -40,10 +40,6 @@ Created by the necessity to have a open-source and easy to use macro for <bold>l
 ### Error codes (For support / debugging) [not important for users]
 ```
 .\Error code 101  (Failed to find a executeable to save)
-.\Error code 102  (Failed to save executeable to config)
-.\Error code 103  (Failed to start bookmarked application)
-.\Error code 104  (Failed to bookmark application)
-.\Error code 105  (Failed to copy bookmark image)
 ```
 
 
@@ -62,8 +58,8 @@ The Sute's Macro Project is under the MIT License.
 - [Sute's Macro, uses the holy spirits to work.](https://github.com/yurkyu/sutes-macro/
 
 ### Screenshots
-<img src="https://media.discordapp.net/attachments/1115532270892240939/1125134464570376343/Screenshot_270.png?width=753&height=493" width="600px">
-<img src="https://media.discordapp.net/attachments/1115532270892240939/1125134464889127023/Screenshot_271.png?width=764&height=493" width="600px">
+<img src="https://media.discordapp.net/attachments/1167612844779503642/1224074202735448185/Screenshot_38.png?ex=661c2af0&is=6609b5f0&hm=cfbcab3cb8ca9622b6c4f61d51959e34dceb7e3df1988b3438c3b8076f6ed11e&=&format=webp&quality=lossless" width="400px">
+<img src="https://media.discordapp.net/attachments/1167612844779503642/1224074203032981645/Screenshot_39.png?ex=661c2af0&is=6609b5f0&hm=5b5626a7c1e0c3b4910be98e130b37bbbc9b548d42c91b3770b9320c96d9ebe8&=&format=webp&quality=lossless" width="400px">
 
 
 ### Stuff to do
