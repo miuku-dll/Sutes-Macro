@@ -16,7 +16,7 @@ namespace main
     class Program // Handles main functions
     {
         private static bool _isExecutedFirst = false;
-        private static bool skip = false;
+        private static bool skip = true;
         private static bool running = false;
 
         public static void GoodMorning(String[] options)
@@ -25,6 +25,8 @@ namespace main
             {
                 var PrivateServerFile = "./config/PrivateServer.txt";
                 var WebhookLocation = "./config/Webhook.txt";
+                var CollectStatus = "./config/Status1.txt";
+                var CraftStatus = "./config/Status2.txt";
 
                 if (!Directory.Exists("./config/"))
                 {
@@ -47,6 +49,16 @@ namespace main
                         fs.Write(Encoding.UTF8.GetBytes(value), 0, value.Length);
                     }
                     using (FileStream fs = File.Create(WebhookLocation))
+                    {
+                        char[] value = "".ToCharArray();
+                        fs.Write(Encoding.UTF8.GetBytes(value), 0, value.Length);
+                    }
+                    using (FileStream fs = File.Create(CollectStatus))
+                    {
+                        char[] value = "".ToCharArray();
+                        fs.Write(Encoding.UTF8.GetBytes(value), 0, value.Length);
+                    }
+                    using (FileStream fs = File.Create(CraftStatus))
                     {
                         char[] value = "".ToCharArray();
                         fs.Write(Encoding.UTF8.GetBytes(value), 0, value.Length);

@@ -52,12 +52,23 @@ namespace MacroForSols
                             new MenuItem()
                             {
                                 Text = "Collect Items",
-                                Action = () => Program.option1()
+                                Action = () => Util.AutoCollect()
+
                             },
                             new MenuItem()
                             {
                                 Text = "Auto Craft Gilded Coins",
                                 Action = () => Program.option2()
+                            },
+                            new MenuItem()
+                            {
+                                Text = "Rotate Collect & Craft Coins",
+                                Action = () => Program.option2()
+                            },
+                            new MenuItem()
+                            {
+                                Text = "More Crafting Features",
+                                SubMenuId = 4
                             },
                             new MenuItem()
                             {
@@ -86,6 +97,29 @@ namespace MacroForSols
                             {
                                 Text = "Back to main menu",
                                 SubMenuId = 1
+                            }
+                        }
+                    },
+
+                    new Menu()
+                    {
+                        MenuId = 4,
+                        MenuItems =
+                        {
+                            new MenuItem()
+                            {
+                                Text = "Auto Craft Heavenly I & II",
+                                Action = () => Util.AutoCraftHeavenly()
+                            },
+                            new MenuItem()
+                            {
+                                Text = "Go to stella",
+                                Action = () => Util.MoveToStella()
+                            },
+                            new MenuItem()
+                            {
+                                Text = "Back to main menu",
+                                SubMenuId = 2
                             }
                         }
                     }
