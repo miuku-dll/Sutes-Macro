@@ -442,7 +442,7 @@ namespace MacroForSols
         public static void WebhookReset()
         {
             sendDiscordWebhook(
-                File.ReadAllText(@"C:\temp\sutesconfig.txt"),
+                File.ReadAllText(@"./config/Webhook.txt"),
                 "{\"username\": \"Sute's Macro\",\"embeds\":[    {\"description\":\"Reset Character\", \"title\":\"\", \"color\":16723502}]  }"
             );
         }
@@ -450,7 +450,7 @@ namespace MacroForSols
         public static void WebhookCollecting()
         {
             sendDiscordWebhook(
-                File.ReadAllText(@"C:\temp\sutesconfig.txt"),
+                File.ReadAllText(@"./config/Webhook.txt"),
                 "{\"username\": \"Sute's Macro\",\"embeds\":[    {\"description\":\"Collecting Items\", \"title\":\"\", \"color\":1184274}]  }"
             );
         }
@@ -458,7 +458,7 @@ namespace MacroForSols
         public static void WebhookResetCharacter()
         {
             sendDiscordWebhook(
-                File.ReadAllText(@"C:\temp\sutesconfig.txt"),
+                File.ReadAllText(@"./config/Webhook.txt"),
                 "{\"username\": \"Sute's Macro\",\"embeds\":[    {\"description\":\"Resetting Character Position\", \"title\":\"\", \"color\":2039583}]  }"
             );
         }
@@ -466,7 +466,7 @@ namespace MacroForSols
         public static void WebhookMovingToArea()
         {
             sendDiscordWebhook(
-                File.ReadAllText(@"C:\temp\sutesconfig.txt"),
+                File.ReadAllText(@"./config/Webhook.txt"),
                 "{\"username\": \"Sute's Macro\",\"embeds\":[    {\"description\":\"Moving to next area\", \"title\":\"\", \"color\":6284940}]  }"
             );
         }
@@ -474,7 +474,7 @@ namespace MacroForSols
         public static void WebhookJack()
         {
             sendDiscordWebhook(
-                File.ReadAllText(@"C:\temp\sutesconfig.txt"),
+                File.ReadAllText(@"./config/Webhook.txt"),
                 "{\"username\": \"Sute's Macro\",\"embeds\":[    {\"description\":\"Moving to Jake's Workshop\", \"title\":\"\", \"color\":16774912}]  }"
             );
         }
