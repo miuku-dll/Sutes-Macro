@@ -28,6 +28,7 @@ namespace MacroForSols
             else
             {
                 Console.WriteLine("Reconnecting to your server...");
+                ReconnectingRoblox();
                 StartPrivateServer();
 
             }
@@ -86,7 +87,7 @@ namespace MacroForSols
             Thread.Sleep(500);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Return);
             Thread.Sleep(1000);
-        } //CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Return,KeyFlags.Down);
+        }
 
         public static void ResetPos()
         {
@@ -112,7 +113,7 @@ namespace MacroForSols
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.A, KeyFlags.Up);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Up);
             Thread.Sleep(500);
-        } //CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Return,KeyFlags.Down);
+        }
 
         public static void Collect12()
         {
@@ -563,18 +564,48 @@ namespace MacroForSols
 
         public static void AutoCollect()
         {
-            Focus();
-            Thread.Sleep(1000);
+           
             for (; ; )
             {
-                MacroForSols.Util.Collect12();
-                MacroForSols.Util.Collect3();
-                MacroForSols.Util.Collect4();
-                MacroForSols.Util.Collect5();
-                Console.WriteLine("Loop Done");
+                Focus();
+                int i = 1;
+                for (; ; )
+                {
+                    MacroForSols.Util.Collect12();
+                    MacroForSols.Util.Collect3();
+                    MacroForSols.Util.Collect4();
+                    MacroForSols.Util.Collect5();
+                    Console.WriteLine("Loop Done");
+                    RobloxRunning();
+                    i++;
+                    if (i > 30) // Collects 30 times and reconnects to roblox
+                        break;
+                }
+
+                Process[] pArry = Process.GetProcesses();
+
+                foreach (Process p in pArry)
+                {
+                    string s = p.ProcessName;
+                    s = s.ToLower();
+                    if (s.CompareTo("RobloxPlayerBeta") == 0)
+                    {
+                        p.Kill();
+                        KillingProcessHook();
+                    }
+                }
+                Console.WriteLine("Killed roblox for rejoining...");
+                RobloxRunning();
             }
         }
 
+        public static void AutoCraft()
+        {
+            Focus();
+            GildedCraft();
+            RobloxRunning();
+
+        }
         private static bool Heav = false;
 
         public static void AutoCraftHeavenly()
@@ -734,9 +765,24 @@ namespace MacroForSols
                 Console.Clear();
             }
         }
-    
 
 
+
+        public static void KillingProcessHook()
+        {
+            sendDiscordWebhook(
+                File.ReadAllText(@"./config/Webhook.txt"),
+                "{\"username\": \"Sute's Macro\",\"embeds\":[    {\"description\":\"Killing roblox to reconnect...\", \"title\":\"\", \"color\":25424691}]  }"
+            );
+        }
+
+        public static void ReconnectingRoblox()
+        {
+            sendDiscordWebhook(
+                File.ReadAllText(@"./config/Webhook.txt"),
+                "{\"username\": \"Sute's Macro\",\"embeds\":[    {\"description\":\"Reconnecting to private server...\", \"title\":\"\", \"color\":7221041}]  }"
+            );
+        }
 
         public static void WebhookReset()
         {
