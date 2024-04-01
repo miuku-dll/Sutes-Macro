@@ -34,3 +34,5 @@ Allowed browsers
 - Vivaldi
 - Chrome
 - Microsoft Edge
+
+Make sure you have one of these browsers installed before using Sute's Macro
