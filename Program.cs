@@ -1,22 +1,16 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Windows.Documents;
-using System.Windows.Input;
-using CSInputs.ReadInput;
 using MacroForSols;
-using SharpHook;
-using SharpHook.Native;
-using SharpHook.Testing;
+
 
 namespace main
 {
     class Program // Handles main functions
     {
         private static bool _isExecutedFirst = false;
-        private static bool skip = true;
+        private static bool skip = false;
         private static bool running = false;
 
         public static void GoodMorning(String[] options)
