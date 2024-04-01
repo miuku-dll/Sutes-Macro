@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Diagnostics;
-using System.Reflection;
-using System.Runtime.InteropServices;
 using MacroForSols;
 using DeclarativeConsoleMenu;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using main;
 using System.Threading.Tasks;
-
 
 namespace MacroForSols
 {
