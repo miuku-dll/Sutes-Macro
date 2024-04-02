@@ -26,11 +26,10 @@ To edit the application, first re-build the project, for any reason, then the in
 - Ctrl + Shift + B (build)
 
 ## Showcase
-   <iframe width="560" height="315"
-src="https://youtu.be/JXNY-ejcBy0?si=8fgTUtMnNTGFA0nE" 
-frameborder="0" 
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-allowfullscreen></iframe>
+
+<div align="center">
+  <a href="https://youtu.be/JXNY-ejcBy0?si=JV0S-v8_idefFlSo"><img src="https://img.youtube.com/vi/JXNY-ejcBy0?si=aqGKMyKc1OE_sUkg/0.jpg" alt="IMAGE ALT TEXT"></a>
+</div>
 
 
 #### Sute's Macro, is not fully developed, due to my laziness <br>
