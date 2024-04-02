@@ -26,8 +26,11 @@ To edit the application, first re-build the project, for any reason, then the in
 - Ctrl + Shift + B (build)
 
 ## Showcase
-
-[![Demo](https://cdn.discordapp.com/attachments/1115532270892240939/1125133952512962590/demo5.gif)](https://cdn.discordapp.com/attachments/1115532270892240939/1125133656206348378/2023-07-02_21-37-13.mp4)
+   <iframe width="560" height="315"
+src="https://youtu.be/JXNY-ejcBy0?si=8fgTUtMnNTGFA0nE" 
+frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe>
 
 
 #### Sute's Macro, is not fully developed, due to my laziness <br>
