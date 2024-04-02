@@ -400,46 +400,27 @@ namespace MacroForSols
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
             Console.WriteLine("Done collecting items");
             Thread.Sleep(100);
-        }
 
+            // Moving to the other tree
 
-
-
-
-
-        public static void Collect12()
-        {
-            Focus();
-            Thread.Sleep(1000);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Down);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Up);
-
-            ResetPos();
-            Console.WriteLine("Moving to collection area");
-            WebhookMovingToArea();
-            Thread.Sleep(500);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.A, KeyFlags.Down);
-            Thread.Sleep(3900);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.A, KeyFlags.Up);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Down);
+            Thread.Sleep(200);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Down);
+            Thread.Sleep(100);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Up);
+            Thread.Sleep(100);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Up);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Down);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
-            Thread.Sleep(700);
+            Thread.Sleep(5500);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Up);
-            Console.WriteLine("Collecting items");
-            WebhookCollecting();
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
-            Thread.Sleep(100);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
-            Thread.Sleep(100);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
-            Console.WriteLine("Done collecting items");
-            Thread.Sleep(300);
-
-            Console.WriteLine("Moving to next area");
-            Thread.Sleep(300);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.A, KeyFlags.Down);
+            Thread.Sleep(400);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.A, KeyFlags.Up);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Down);
-            Thread.Sleep(4800);
+            Thread.Sleep(100);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Up);
+
+            // Collecting items
             Thread.Sleep(100);
             Console.WriteLine("Collecting Items");
             WebhookCollecting();
@@ -449,177 +430,28 @@ namespace MacroForSols
             Thread.Sleep(100);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
             Console.WriteLine("Done collecting items");
-            Thread.Sleep(300);
+            Thread.Sleep(100);
 
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Down);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Up);
-        }
-
-        public static void Collect3()
-        {
-            Focus();
-            Thread.Sleep(1000);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Down);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Up);
-
-            ResetPos();
-            Console.WriteLine("Moving to collection area");
-            WebhookMovingToArea();
-            Thread.Sleep(500);
+            // Moving to the mountain
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Down);
+            Thread.Sleep(700);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Up);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Down);
+            Thread.Sleep(4400);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Up);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.A, KeyFlags.Down);
+            Thread.Sleep(500);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Down);
+            Thread.Sleep(4200);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.A, KeyFlags.Up);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Up);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Down);
             Thread.Sleep(2000);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Up);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Down);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Down);
-            Thread.Sleep(3000);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Up);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Up);
-            Thread.Sleep(100);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.A, KeyFlags.Down);
-            Thread.Sleep(1000);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.A, KeyFlags.Up);
-
-            Console.WriteLine("Collecting items");
-            WebhookCollecting();
-            Thread.Sleep(100);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
-            Thread.Sleep(100);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
-            Thread.Sleep(100);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
-            Console.WriteLine("Done collecting area...");
-            Thread.Sleep(300);
-            Console.WriteLine("Moving to next area");
-            WebhookMovingToArea();
-
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Down);
-            Thread.Sleep(1000);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Up);
-            Thread.Sleep(100);
-
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Down);
-            Thread.Sleep(800);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Down);
-            Thread.Sleep(100);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Up);
-            Thread.Sleep(700);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Up);
-            Thread.Sleep(100);
-
-            Console.WriteLine("Collecting items");
-            WebhookCollecting();
-
-            Thread.Sleep(100);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
-            Thread.Sleep(100);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
-            Thread.Sleep(100);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
-            Console.WriteLine("Done collecting area...");
-
-            Thread.Sleep(300);
-            Console.WriteLine("Moving to next area");
-            WebhookMovingToArea();
-
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Down);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Up);
-        }
-
-        public static void Collect4()
-        {
-            Focus();
-            Thread.Sleep(1000);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Down);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Up);
-            ResetPos();
-            Console.WriteLine("Moving to collection area");
-            WebhookCollecting();
-            Thread.Sleep(500);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Down);
-            Thread.Sleep(4000);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Up);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Down);
-            Thread.Sleep(3000);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Up);
-            Thread.Sleep(300);
-            Console.WriteLine("Collecting items");
-            WebhookCollecting();
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
-            Thread.Sleep(100);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
-            Thread.Sleep(100);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
-
-            Console.WriteLine("Done collecting area...");
-            Thread.Sleep(300);
-            Console.WriteLine("Moving to next area");
-            WebhookMovingToArea();
-
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Down);
-            Thread.Sleep(700);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Down);
-            Thread.Sleep(600);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Up);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Up);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Down);
-            Thread.Sleep(5500);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Up);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.A, KeyFlags.Down);
-            Thread.Sleep(400);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.A, KeyFlags.Up);
-            Thread.Sleep(300);
-            Console.WriteLine("Collecting items");
-            WebhookCollecting();
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
-            Thread.Sleep(100);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
-            Thread.Sleep(100);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
-
-            Console.WriteLine("Done collecting area...");
-            Thread.Sleep(300);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Down);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Up);
-        }
-
-        public static void Collect5()
-        {
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Down);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Up);
-
-            ResetPos();
-            Console.WriteLine("Moving to collection area");
-            WebhookMovingToArea();
-            Thread.Sleep(500);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Down);
-            Thread.Sleep(1000);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Up);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Down);
-            Thread.Sleep(10000);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Up);
-            Thread.Sleep(700);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Down);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Down);
-            Thread.Sleep(200);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Up);
-            Thread.Sleep(500);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Up);
-
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Down);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Down);
-            Thread.Sleep(3000);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Up);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Up);
-
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.A, KeyFlags.Down);
-            Thread.Sleep(500);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.A, KeyFlags.Up);
-
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Down);
-            Thread.Sleep(500);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Up);
 
-            Console.WriteLine("Collecting items");
+            // Collecting items
+            Thread.Sleep(100);
+            Console.WriteLine("Collecting Items");
             WebhookCollecting();
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
             Thread.Sleep(100);
@@ -627,10 +459,8 @@ namespace MacroForSols
             Thread.Sleep(100);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
             Console.WriteLine("Done collecting items");
-            Thread.Sleep(300);
+            Thread.Sleep(100);
 
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Down);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Up);
         }
 
         public static void MoveToStella()
