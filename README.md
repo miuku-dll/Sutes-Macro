@@ -27,10 +27,10 @@ To edit the application, first re-build the project, for any reason, then the in
 
 ## Showcase
 
-<div align="center">
-  <a href="https://youtu.be/JXNY-ejcBy0?si=JV0S-v8_idefFlSo"></a>
-</div>
-
+<div align="left">
+      <a href="https://www.youtube.com/watch?v=JXNY-ejcBy0">
+         <img src="https://img.youtube.com/vi/JXNY-ejcBy0/0.jpg" style="width:100%;">
+      </a>
 
 #### Sute's Macro, is not fully developed, due to my laziness <br>
 🔴 Alot of the features are still missing, and under 'developement'. I will most likely push them in the near future(ish)</h4>
