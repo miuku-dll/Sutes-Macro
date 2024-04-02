@@ -8,7 +8,6 @@
 - Add Hotkey Toggling
 
 #### Changes
-- Top the most
 - ~~Call functions directly~~
 - ~~Move movement functions to a single class for easier calling~~
 - ~~Clean code~~
