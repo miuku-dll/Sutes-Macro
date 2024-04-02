@@ -1,7 +1,7 @@
 ### To-Do List
 
 #### Additions
-- Add Discord RPC
+- ~~Add Discord RPC~~
 - Add Hooks to functions
 - Finish Heavenly potion crafting
 - Add Jackpot glove crafting
