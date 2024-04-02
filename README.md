@@ -27,8 +27,10 @@ To edit the application, first re-build the project, for any reason, then the in
 
 ## Showcase
 
-[![Demo](https://cdn.discordapp.com/attachments/1115532270892240939/1125133952512962590/demo5.gif)](https://cdn.discordapp.com/attachments/1115532270892240939/1125133656206348378/2023-07-02_21-37-13.mp4)
-
+<div align="left">
+      <a href="https://www.youtube.com/watch?v=JXNY-ejcBy0">
+         <img src="https://img.youtube.com/vi/JXNY-ejcBy0/0.jpg" style="width:100%;">
+      </a>
 
 #### Sute's Macro, is not fully developed, due to my laziness <br>
 🔴 Alot of the features are still missing, and under 'developement'. I will most likely push them in the near future(ish)</h4>
@@ -63,8 +65,7 @@ The Sute's Macro Project is under the MIT License.
 
 
 ### Stuff to do
-> Accurate roll announce's <br>
-> Auto craft Heavenly Potion I & II <br>
+[Full to-do list](https://github.com/yurkyu/Sutes-Macro/blob/master/Info/Sols%20to-do.md)
 
 
 ### LICENSE
