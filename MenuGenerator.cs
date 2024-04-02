@@ -44,7 +44,7 @@ namespace MacroForSols
                             new MenuItem()
                             {
                                 Text = "Collect Items",
-                                Action = () => Util.AutoCollect()
+                                Action = () => Util.CollectAll()
 
                             },
                             new MenuItem()
