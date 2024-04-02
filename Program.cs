@@ -297,67 +297,6 @@ namespace main
             menus.ShowMenu(1);
             Console.ReadKey();
         }
-
-        public static void option2()
-        {
-            running = true;
-            Console.WriteLine(running);
-            Console.Clear();
-
-            Program.Focus();
-            Thread.Sleep(1000);
-
-            Util.GildedCraft();
-            Console.Clear();
-            running = false;
-        }
-
-        [DllImport("user32.dll", SetLastError = true)]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        public static extern bool SetForegroundWindow(IntPtr hWnd);
-
-        public static void Focus()
-        {
-            MenuCollection menus = MenuGenerator.CreateMenuCollection();
-            try
-            {
-                Process[] processes = Process.GetProcessesByName("RobloxPlayerBeta");
-                SetForegroundWindow(processes[0].MainWindowHandle);
-            }
-            catch
-            {
-                Console.WriteLine("Roblox is not running");
-                Thread.Sleep(1000);
-                Console.WriteLine("Returning to Idle...");
-                Thread.Sleep(1000);
-                Console.Clear();
-                menus.ShowMenu(2);
-                Console.ReadKey();
-            }
-        }
-
-        public static void option1()
-        {
-            running = true;
-            Console.WriteLine(running);
-            Console.Clear();
-
-            Program.Focus();
-            Thread.Sleep(1000);
-
-            try
-            {
-                Util.AutoCollect();
-
-                Console.WriteLine("Loop ended");
-            }
-            catch
-            {
-                Console.WriteLine("Something went wrong...");
-                Thread.Sleep(1000);
-                Console.Clear();
-            }
-            running = false;
-        }
+        
     }
 }
