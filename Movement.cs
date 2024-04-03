@@ -154,7 +154,7 @@ namespace MacroForSols
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Up);
             Thread.Sleep(10);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Down);
-            Thread.Sleep(1000);
+            Thread.Sleep(600);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Down);
             Thread.Sleep(100);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Up);
