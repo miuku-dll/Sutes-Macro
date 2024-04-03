@@ -19,7 +19,7 @@ For installation help please refer to
 [Installation Guide](https://github.com/yurkyu/Sutes-Macro/blob/master/Info/Info.md)
 
 ## How to build?
-To edit the application, first re-build the project, for any reason, then the intellisense should load. The views can be found under MVVM-Views<.
+To edit the application, first re-build the project, for any reason, then the intellisense should load<.
 - Clone the repo `gh repo clone yurkyu/Sols-RNG-Macro`
 - Open SutesMacro.sln in Visual Studio 2022.
 - Set Release x64
