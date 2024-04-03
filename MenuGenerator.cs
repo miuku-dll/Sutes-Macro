@@ -44,18 +44,18 @@ namespace MacroForSols
                             new MenuItem()
                             {
                                 Text = "Collect Items",
-                                Action = () => Util.CollectAll()
+                                Action = () => Util.AutoCollect()
 
                             },
                             new MenuItem()
                             {
                                 Text = "Auto Craft Gilded Coins",
-                                Action = () => Program.option2()
+                                Action = () => Util.AutoCraft()
                             },
                             new MenuItem()
                             {
                                 Text = "Rotate Collect & Craft Coins",
-                                Action = () => Program.option2()
+                                Action = () => Util.Rotate()
                             },
                             new MenuItem()
                             {
@@ -78,12 +78,17 @@ namespace MacroForSols
                             new MenuItem()
                             {
                                 Text = "Set Webhook",
-                                Action = () => Util.Webhook()
+                                Action = () => Util.SetWebhook()
                             },
                             new MenuItem()
                             {
                                 Text = "Set Keybind",
-                                Action = () => Console.WriteLine("Goodbye")
+                                Action = () => Console.WriteLine("...")
+                            },
+                            new MenuItem()
+                            {
+                                Text = "Set Private Server Address",
+                                Action = () => Util.SetPrivateServer()
                             },
                             new MenuItem()
                             {

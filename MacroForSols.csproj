@@ -13,4 +13,10 @@
     <PackageReference Include="SharpHook" Version="5.3.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="DiscordRPC">
+      <HintPath>Refrences\DiscordRPC.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

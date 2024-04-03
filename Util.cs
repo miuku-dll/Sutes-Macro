@@ -7,6 +7,8 @@ using System.Runtime.InteropServices;
 using System.Windows.Shapes;
 using CSInputs;
 using CSInputs.Enums;
+using DiscordRPC;
+using DiscordRPC.Logging;
 using main;
 using SharpHook;
 using SharpHook.Native;
@@ -15,6 +17,8 @@ namespace MacroForSols
 {
     internal class Util // This class handles almost everything from Movement to Webhooks
     {
+
+
         string PrivateServer = File.ReadAllText(@"./Config/PrivateServer.txt");
 
         public static void RobloxRunning()
@@ -313,7 +317,7 @@ namespace MacroForSols
             }
         }
 
-        public static void Webhook()
+        public static void SetWebhook()
         {
             MenuCollection menus = MenuGenerator.CreateMenuCollection();
             Console.Write("Webhook: ");
@@ -326,6 +330,25 @@ namespace MacroForSols
             string Webhook1 = File.ReadAllText(@"./Config/Webhook.txt");
             Thread.Sleep(1000);
             Console.WriteLine("Your webhook: " + Webhook1);
+            Thread.Sleep(1000);
+            Console.Clear();
+            menus.ShowMenu(3);
+            Console.ReadKey();
+        }
+
+        public static void SetPrivateServer()
+        {
+            MenuCollection menus = MenuGenerator.CreateMenuCollection();
+            Console.Write("Private Server Address: ");
+            var webhooklink = Console.ReadLine();
+            using (StreamWriter writer = new StreamWriter(@"./config/PrivateServer.txt"))
+            {
+                writer.WriteLine(webhooklink);
+            }
+            Console.Clear();
+            string Webhook1 = File.ReadAllText(@"./Config/PrivateServer.txt");
+            Thread.Sleep(1000);
+            Console.WriteLine("Your Private Server: " + Webhook1);
             Thread.Sleep(1000);
             Console.Clear();
             menus.ShowMenu(3);
@@ -354,6 +377,42 @@ namespace MacroForSols
                     if (i > 30) // Collects 30 times and reconnects to roblox
                         break;
                 }
+
+                Process[] pArry = Process.GetProcesses();
+
+                foreach (Process p in pArry)
+                {
+                    string s = p.ProcessName;
+                    s = s.ToLower();
+                    if (s.CompareTo("RobloxPlayerBeta") == 0)
+                    {
+                        p.Kill();
+                        KillingProcessHook();
+                    }
+                }
+                Console.WriteLine("Killed roblox for rejoining...");
+                RobloxRunning();
+            }
+        }
+
+        public static void Rotate()
+        {
+
+            for (; ; )
+            {
+                Focus();
+                int i = 1;
+                for (; ; )
+                {
+                    Movement.CollectAll();
+                    Console.WriteLine("Loop Done");
+                    RobloxRunning();
+                    i++;
+                    if (i > 10) // Collects 10 times, crafts and reconnects to roblox
+                        break;
+                }
+
+                GildedCraft();
 
                 Process[] pArry = Process.GetProcesses();
 

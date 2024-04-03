@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using DiscordRPC;
+using DiscordRPC.Logging;
 using MacroForSols;
 
 
@@ -12,6 +15,29 @@ namespace main
         private static bool _isExecutedFirst = false;
         private static bool skip = false;
         private static bool running = false;
+
+        public static DiscordRpcClient client;
+
+        public void Initialize()
+        {
+
+            client = new DiscordRpcClient("1153674562437914634");
+
+            client.Logger = new ConsoleLogger() { Level = DiscordRPC.Logging.LogLevel.Warning };
+
+            client.OnReady += (sender, e) =>
+            {
+                Console.WriteLine("Received Ready from user {0}", e.User.Username);
+            };
+
+            client.OnPresenceUpdate += (sender, e) =>
+            {
+                Console.WriteLine("Received Update! {0}", e.Presence);
+            };
+
+            client.Initialize();
+
+        }
 
         public static void GoodMorning(String[] options)
         {
@@ -167,7 +193,7 @@ namespace main
                 
             }
 
-            string RobloxPath1 = File.ReadAllText(@"./temp/PrivateServer.txt");
+            string RobloxPath1 = File.ReadAllText(@".\Config\PrivateServer.txt");
 
             try
             {
@@ -273,6 +299,21 @@ namespace main
 
         public static void Main(string[] args)
         {
+            static void Update()
+            {
+                client.SetPresence(new RichPresence()
+                {
+                    Details = "Sute's Macro",
+                    State = "Running...",
+                    Assets = new Assets()
+                    {
+                        LargeImageKey = "output-onlinepngtools_6_",
+                        LargeImageText = "Sute's Macro - Sol's RNG",
+                        SmallImageKey = "output-onlinepngtools_6_"
+                    }
+                });
+            }
+            
             MenuCollection menus = MenuGenerator.CreateMenuCollection();
             if (skip)
             {
