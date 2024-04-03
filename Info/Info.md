@@ -22,6 +22,7 @@ To install the built application first<br>
 - [Join our discord](https://discord.gg/VsRMhhYYQC)<br>
 - Head to Macros > Sols-RNG and download the most recent version from pinned messages.<br>
 - Download [.net Windows Runtime](https://download.visualstudio.microsoft.com/download/pr/b280d97f-25a9-4ab7-8a12-8291aa3af117/a37ed0e68f51fcd973e9f6cb4f40b1a7/windowsdesktop-runtime-8.0.0-win-x64.exe)
+- Run the setup and continue to next step ->
 - Extract the .ZIP using [Winrar](https://www.win-rar.com/start.html?&L=0)<br>
 - Run the .exe file as Administrator<br>
 <br>
