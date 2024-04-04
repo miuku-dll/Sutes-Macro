@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using SharpHook;
 using CSInputs;
 using MacroForSols;
+using DeclarativeConsoleMenu;
 
 namespace MacroForSols
 {
@@ -14,12 +15,14 @@ namespace MacroForSols
 
         public static void Starting()
         {
+            MenuCollection menus = MenuGenerator.CreateMenuCollection();
+
             Util.Focus();
             Util.WebhookStart();
             Console.Clear();
             Console.WriteLine("Starting...");
             for (; ; )
-            {
+            { 
                 string Check2Path = File.ReadAllText(@".\Config\Status2.txt");
                 string CheckPath = File.ReadAllText(@".\Config\Status1.txt");
                 if (CheckPath.Contains("On", StringComparison.OrdinalIgnoreCase))
@@ -37,7 +40,16 @@ namespace MacroForSols
                 {
                     Util.AutoCraft();
                 }
-            }
+                else
+                {
+                    Console.WriteLine("No features turned on...");
+                    Thread.Sleep(500);
+                    Console.WriteLine("returning to null status...");
+                    Thread.Sleep(500);
+                    Console.Clear();
+                    menus.ShowMenu(1);
+                }
+             }
         }
     }
 }

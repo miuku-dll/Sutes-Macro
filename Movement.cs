@@ -355,6 +355,7 @@ namespace MacroForSols
         startcraft:
             if (crafting)
             {
+                
                 Console.WriteLine("Resetting store position");
                 CShauto.Mouse.Move(380, 717);
                 Thread.Sleep(50);
@@ -387,11 +388,12 @@ namespace MacroForSols
                 Thread.Sleep(200);
 
                 i = 1;
-
+            ContinueCrafting:
                 Console.WriteLine("Starting Gilded coin crafting...");
                 for (; ; )
                 {
 
+                
                     CShauto.Mouse.Move(364, 902);
                     Thread.Sleep(50);
                     CShauto.Mouse.Move(280, 901);
@@ -419,16 +421,23 @@ namespace MacroForSols
                         break;
                 }
                 Console.WriteLine("Done crafting Gilded coins");
-                Thread.Sleep(1000);
-                Console.WriteLine("Closing store...");
-                CShauto.Mouse.Move(338, 61);
-                Thread.Sleep(50);
-                CShauto.Mouse.Move(287, 58);
-                Thread.Sleep(50);
-                CShauto.Mouse.Click();
-                Thread.Sleep(50);
-                Console.WriteLine("Gilded coin crafting completed");
-                Thread.Sleep(1000);
+                Thread.Sleep(2000);
+
+                string CheckPath = File.ReadAllText(@".\Config\Status1.txt");
+                if (CheckPath.Contains("On", StringComparison.OrdinalIgnoreCase))
+                {
+                    Console.WriteLine("Closing store...");
+                    CShauto.Mouse.Move(338, 61);
+                    Thread.Sleep(50);
+                    CShauto.Mouse.Move(287, 58);
+                    Thread.Sleep(50);
+                    CShauto.Mouse.Click();
+                    Thread.Sleep(50);
+                }
+                else
+                {
+                    goto ContinueCrafting;
+                }
             }
             else
             {
