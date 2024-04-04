@@ -110,7 +110,7 @@ namespace MacroForSols
                             new MenuItem()
                             {
                                 Text = "Auto Craft Heavenly I & II",
-                                Action = () => Util.AutoCraftHeavenly()
+                                Action = () => Movement.MoveToStella()
                             },
                             new MenuItem()
                             {

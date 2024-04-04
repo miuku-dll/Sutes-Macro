@@ -20,6 +20,33 @@ namespace MacroForSols
 {
     internal class Movement
     {
+
+        public static void ResetCam()
+        {
+            Util.Focus();
+            Thread.Sleep(1000);
+            CShauto.Mouse.Move(965, 583);
+            CShauto.Mouse.Click();
+
+            int i = 1;
+            for (; ; )
+            {
+                CShauto.Mouse.Scroll(150);
+                Thread.Sleep(10);
+                i++;
+                if (i > 30)
+                    break;
+            }
+
+            for (; ; )
+            {
+                CShauto.Mouse.Scroll(-35);
+                Thread.Sleep(10);
+                i++;
+                if (i > 31)
+                    break;
+            }
+        }
         public static void CollectAll()
         {
             Util.Focus(); // Focus on Roblox process
@@ -41,10 +68,10 @@ namespace MacroForSols
 
             for (; ; )
             {
-                CShauto.Mouse.Scroll(-150);
+                CShauto.Mouse.Scroll(-35);
                 Thread.Sleep(10);
                 i++;
-                if (i > 33)
+                if (i > 31)
                     break;
             }
             Thread.Sleep(500);
@@ -441,26 +468,47 @@ namespace MacroForSols
             }
             else
             {
-                CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Down);
-                CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Up);
-
                 Console.WriteLine("Resetting postion for crafting.");
-                Util.WebhookResetCharacter();
-                Util.ResetPos();
+
+
+                ResetCam();
+
+                // Resetting character
+                CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Escape);
+                Thread.Sleep(500);
+                CSInputs.SendInput.Keyboard.Send(KeyboardKeys.R);
+                Thread.Sleep(500);
+                CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Return);
+                Console.WriteLine("Reset character");
+                Util.WebhookReset();
+                Thread.Sleep(2500);
+
+                // Resetting location
+                CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Down);
+                Thread.Sleep(1500);
+                CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Up);
+                CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Down);
+                Thread.Sleep(1000);
+                CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Down);
+                Thread.Sleep(1000);
+                CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Up);
+                Thread.Sleep(10);
+                CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Up);
+                Thread.Sleep(100);
+
                 Console.WriteLine("Done.");
                 Thread.Sleep(500);
                 Util.WebhookJack();
                 Console.WriteLine("Moving to Jake's Workshop.");
 
-                CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Down);
-                Thread.Sleep(2000);
-                CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Up);
                 CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Down);
-                Thread.Sleep(4000);
+                Thread.Sleep(2000);
+                CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Down);
+                Thread.Sleep(1500);
+                CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Up);
+                Thread.Sleep(1500);
                 CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Up);
                 CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
-                CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Down);
-                CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Up);
                 Thread.Sleep(4000);
                 CShauto.Mouse.Move(627, 907);
                 Thread.Sleep(50);
@@ -557,18 +605,14 @@ namespace MacroForSols
             int i = 1;
             for (; ; )
             {
-                simulator.SimulateMouseWheel(
-                    rotation: 420,
-                    direction: MouseWheelScrollDirection.Vertical, // Vertical by default
-                    type: MouseWheelScrollType.UnitScroll
-                ); // UnitScroll by default
+                CShauto.Mouse.Scroll(150);
                 Thread.Sleep(10);
                 i++;
                 if (i > 30)
                     break;
             }
 
-            CShauto.Mouse.Scroll(-200);
+            CShauto.Mouse.Scroll(-35);
             Thread.Sleep(200);
 
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);

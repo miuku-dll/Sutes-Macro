@@ -168,99 +168,24 @@ namespace MacroForSols
 
         public static void AutoCollect()
         {
-
-            for (; ; )
-            {
-                Focus();
-                int i = 1;
-                for (; ; )
-                {
-                    Movement.CollectAll();
-                    Console.WriteLine("Loop Done");
-                    RobloxRunning();
-                    i++;
-                    if (i > 30) // Collects 30 times and reconnects to roblox
-                        break;
-                }
-
-                Process[] pArry = Process.GetProcesses();
-
-                foreach (Process p in pArry)
-                {
-                    string s = p.ProcessName;
-                    s = s.ToLower();
-                    if (s.CompareTo("RobloxPlayerBeta") == 0)
-                    {
-                        p.Kill();
-                        KillingProcessHook();
-                    }
-                }
-                Console.WriteLine("Killed roblox for rejoining...");
-                RobloxRunning();
-            }
+           Focus();
+               
+           Movement.CollectAll();
+           Console.WriteLine("Loop Done");
+           RobloxRunning();
+        
+            
         }
-
-       
 
         public static void AutoCraft()
         {
             Focus();
             Movement.GildedCraft();
+            Console.WriteLine("Loop Done");
             RobloxRunning();
 
         }
         private static bool Heav = false;
-
-        public static void AutoCraftHeavenly()
-        {
-            MenuCollection menus = MenuGenerator.CreateMenuCollection();
-
-            if (Heav)
-            {
-                Heav = false;
-
-
-            }
-            else
-            {
-                Console.Clear();
-                Console.WriteLine("Make sure you have (Divinus, Gilded, Exotic) on auto equip via game");
-
-                Thread.Sleep(2000);
-                Focus();
-                Console.WriteLine("Starting auto collect...");
-                Util.AutoCollect();
-                Console.WriteLine("Moving to auto craft...");
-
-                Heav = true;
-            }
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         public static void StartPrivateServer()
         {
