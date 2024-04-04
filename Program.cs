@@ -53,6 +53,13 @@ namespace main
                     // Try to create the Path.
                     DirectoryInfo di = Directory.CreateDirectory("./config");
                     Console.WriteLine("Path Created...");
+
+                    var Path = "off"; // Too lazy to find out myself for now
+                    using (FileStream fs = File.Create(@".\Config\Status1.txt"))
+                    {
+                        char[] value = Path.ToCharArray();
+                        fs.Write(Encoding.UTF8.GetBytes(value), 0, value.Length);
+                    }
                 }
                 else { }
 
@@ -84,6 +91,7 @@ namespace main
                         fs.Write(Encoding.UTF8.GetBytes(value), 0, value.Length);
                     }
                 }
+
 
                 Console.WriteLine("Done Checking Folder...");
                 Thread.Sleep(1000);
@@ -273,13 +281,19 @@ namespace main
 
                 for (; ; )
                 {
-                    Console.WriteLine(" Loading.");
+                    Console.WriteLine(" /////");
                     Thread.Sleep(500);
                     Console.Clear();
-                    Console.WriteLine(" Loading..");
+                    Console.WriteLine(" //////////");
                     Thread.Sleep(500);
                     Console.Clear();
-                    Console.WriteLine(" Loading...");
+                    Console.WriteLine(" ///////////////");
+                    Thread.Sleep(500);
+                    Console.Clear();
+                    Console.WriteLine(" ////////////////////");
+                    Thread.Sleep(500);
+                    Console.Clear();
+                    Console.WriteLine(" /////////////////////////");
                     Thread.Sleep(500);
                     Console.Clear();
                     i++;
@@ -314,6 +328,11 @@ namespace main
                 });
             }
             
+            try
+            {
+                Util.WebhookLaunch();
+            }
+            catch { }
             MenuCollection menus = MenuGenerator.CreateMenuCollection();
             if (skip)
             {

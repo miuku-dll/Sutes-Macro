@@ -7,7 +7,20 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>True</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+
   <ItemGroup>
+    <PackageReference Include="Costura.Fody" Version="5.7.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="CShauto" Version="1.0.1" />
     <PackageReference Include="CSInputs" Version="1.0.3" />
     <PackageReference Include="SharpHook" Version="5.3.2" />
   </ItemGroup>
@@ -15,6 +28,12 @@
   <ItemGroup>
     <Reference Include="DiscordRPC">
       <HintPath>Refrences\DiscordRPC.dll</HintPath>
+    </Reference>
+    <Reference Include="Inputs">
+      <HintPath>..\..\..\Downloads\Inputs.NET-main\Inputs.NET-main\src\Inputs\bin\Debug\net6.0-windows\Inputs.dll</HintPath>
+    </Reference>
+    <Reference Include="Selenium.Humanize">
+      <HintPath>..\..\..\Downloads\Selenium.Humanize-1.0.0\Selenium.Humanize-1.0.0\Selenium.Humanize\bin\Debug\netstandard2.1\MouseHook.dll</HintPath>
     </Reference>
   </ItemGroup>
 

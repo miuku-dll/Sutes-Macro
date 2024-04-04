@@ -24,14 +24,18 @@ namespace MacroForSols
                         {
                             new MenuItem()
                             {
+                                Text = "Start",
+                                Action = () => Worker.Starting()
+                            },
+                            new MenuItem()
+                            {
                                 Text = "Features",
-                                // if you want to link to another menu, then set the other menu's id
+                               
                                 SubMenuId = 2
                             },
                             new MenuItem()
                             {
                                 Text = "Settings",
-                                //or if you want to perform an action, set the Action property
                                 SubMenuId = 3
                             }
                         }
@@ -44,18 +48,15 @@ namespace MacroForSols
                             new MenuItem()
                             {
                                 Text = "Collect Items",
-                                Action = () => Util.AutoCollect()
+                                Action = () => Util.SetStatus1(),
+                                
 
                             },
                             new MenuItem()
                             {
                                 Text = "Auto Craft Gilded Coins",
-                                Action = () => Util.AutoCraft()
-                            },
-                            new MenuItem()
-                            {
-                                Text = "Rotate Collect & Craft Coins",
-                                Action = () => Util.Rotate()
+                                Action = () => Util.SetStatus2(),
+                                
                             },
                             new MenuItem()
                             {
@@ -78,17 +79,20 @@ namespace MacroForSols
                             new MenuItem()
                             {
                                 Text = "Set Webhook",
-                                Action = () => Util.SetWebhook()
+                                Action = () => Util.SetWebhook(),
+                                
                             },
                             new MenuItem()
                             {
                                 Text = "Set Keybind",
-                                Action = () => Console.WriteLine("...")
+                                Action = () => Console.WriteLine("..."),
+                                
                             },
                             new MenuItem()
                             {
                                 Text = "Set Private Server Address",
-                                Action = () => Util.SetPrivateServer()
+                                Action = () => Util.SetPrivateServer(),
+                                
                             },
                             new MenuItem()
                             {
@@ -111,7 +115,7 @@ namespace MacroForSols
                             new MenuItem()
                             {
                                 Text = "Go to stella",
-                                Action = () => Util.MoveToStella()
+                                Action = () => Movement.MoveToStella()
                             },
                             new MenuItem()
                             {

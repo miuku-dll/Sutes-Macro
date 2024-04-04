@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
-using System.IO;
 using System.Net;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using CSInputs;
+using System.Text;
 using CSInputs.Enums;
-using DiscordRPC;
-using DiscordRPC.Logging;
-using main;
 using SharpHook;
 using SharpHook.Native;
 
@@ -17,7 +12,7 @@ namespace MacroForSols
     internal class Util // This class handles almost everything from Movement to Webhooks
     {
 
-
+        
         string PrivateServer = File.ReadAllText(@"./Config/PrivateServer.txt");
 
         public static void RobloxRunning()
@@ -79,7 +74,7 @@ namespace MacroForSols
             }
         }
 
-        private static bool crafting = false;
+        
 
         public static void Reset()
         {
@@ -118,203 +113,14 @@ namespace MacroForSols
             Thread.Sleep(500);
         }
 
+
+
         
 
-        public static void MoveToStella()
-        {
-            Console.WriteLine("Focusing on Roblox process...");
-            Focus();
-            Thread.Sleep(1000);
-
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Down);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Up);
-
-            ResetPos();
-            Console.WriteLine("Resetting X axis...");
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Down);
-            Thread.Sleep(5000);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Up);
-
-            Console.WriteLine("Moving to stellas dungeon...");
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Down);
-            Thread.Sleep(9000);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Up);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Down);
-            Thread.Sleep(1450);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Up);
-
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Down);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Down);
-            Thread.Sleep(3700);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Up);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Up);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.A, KeyFlags.Down);
-            Thread.Sleep(3500);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.A, KeyFlags.Up);
-
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Down);
-            Thread.Sleep(1000);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Down);
-            Thread.Sleep(2000);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Up);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Up);
-
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Down);
-            Thread.Sleep(2000);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Up);
-
-            Console.WriteLine("Entering crafting menu...");
-
-            var simulator = new EventSimulator();
-
-            int i = 1;
-            for (; ; )
-            {
-                simulator.SimulateMouseWheel(
-                    rotation: 420,
-                    direction: MouseWheelScrollDirection.Vertical, // Vertical by default
-                    type: MouseWheelScrollType.UnitScroll
-                ); // UnitScroll by default
-                Thread.Sleep(10);
-                i++;
-                if (i > 30)
-                    break;
-            }
-
-            simulator.SimulateMouseWheel(
-                        rotation: -420,
-                        direction: MouseWheelScrollDirection.Vertical, // Vertical by default
-                        type: MouseWheelScrollType.UnitScroll
-                    ); // UnitScroll by default
-            Thread.Sleep(200);
-
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
-            Console.WriteLine("Arrived at Stellas crafting menu...");
-        }
 
 
 
-
-        public static void GildedCraft()
-        {
-            var simulator = new EventSimulator();
-            Focus();
-            Thread.Sleep(1000);
-
-        startcraft:
-            if (crafting)
-            {
-                Console.WriteLine("Resetting store position");
-                simulator.SimulateMouseMovement(334, 889);
-                Thread.Sleep(50);
-                simulator.SimulateMouseMovement(477, 897);
-                simulator.SimulateMousePress(MouseButton.Button1);
-                simulator.SimulateMouseRelease(MouseButton.Button1);
-                Thread.Sleep(1200);
-
-                int i = 1;
-                for (; ; )
-                {
-                    simulator.SimulateMouseWheel(
-                        rotation: 420,
-                        direction: MouseWheelScrollDirection.Vertical, // Vertical by default
-                        type: MouseWheelScrollType.UnitScroll
-                    ); // UnitScroll by default
-                    Thread.Sleep(200);
-                    i++;
-                    if (i > 4)
-                        break;
-                }
-
-                Thread.Sleep(2000);
-                for (; ; )
-                {
-                    simulator.SimulateMouseWheel(
-                        rotation: -420,
-                        direction: MouseWheelScrollDirection.Vertical, // Vertical by default
-                        type: MouseWheelScrollType.UnitScroll
-                    ); // UnitScroll by default
-                    Thread.Sleep(200);
-                    i++;
-                    if (i > 8)
-                        break;
-                }
-
-                i = 1;
-
-                Console.WriteLine("Starting Gilded coin crafting...");
-                for (; ; )
-                {
-                    simulator.SimulateMouseMovement(334, 889);
-                    Thread.Sleep(50);
-                    simulator.SimulateMouseMovement(477, 897);
-                    Thread.Sleep(500);
-
-                    simulator.SimulateMouseMovement(1200, 447);
-                    Thread.Sleep(50);
-                    simulator.SimulateMouseMovement(1247, 447);
-
-                    simulator.SimulateMousePress(MouseButton.Button1);
-                    simulator.SimulateMouseRelease(MouseButton.Button1);
-                    Thread.Sleep(50);
-                    simulator.SimulateMouseMovement(1148, 691);
-                    Thread.Sleep(50);
-                    simulator.SimulateMouseMovement(1037, 690);
-                    Thread.Sleep(50);
-                    simulator.SimulateMousePress(MouseButton.Button1);
-                    simulator.SimulateMouseRelease(MouseButton.Button1);
-                    Thread.Sleep(100);
-                    Console.WriteLine("Crafted " + i);
-                    i++;
-                    if (i > 5)
-                        break;
-                }
-                Console.WriteLine("Done crafting Gilded coins");
-                Thread.Sleep(1000);
-                Console.WriteLine("Closing store...");
-                simulator.SimulateMouseMovement(338, 61);
-                Thread.Sleep(50);
-                simulator.SimulateMouseMovement(385, 69);
-                Thread.Sleep(50);
-                simulator.SimulateMousePress(MouseButton.Button1);
-                simulator.SimulateMouseRelease(MouseButton.Button1);
-                Console.WriteLine("Gilded coin crafting completed");
-                Thread.Sleep(1000);
-            }
-            else
-            {
-                CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Down);
-                CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Up);
-
-                Console.WriteLine("Resetting postion for crafting.");
-                WebhookResetCharacter();
-                ResetPos();
-                Console.WriteLine("Done.");
-                Thread.Sleep(500);
-                WebhookJack();
-                Console.WriteLine("Moving to Jake's Workshop.");
-
-                CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Down);
-                Thread.Sleep(2000);
-                CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Up);
-                CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Down);
-                Thread.Sleep(4000);
-                CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Up);
-                CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
-                CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Down);
-                CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Shift, KeyFlags.Up);
-                Thread.Sleep(4000);
-                simulator.SimulateMouseMovement(570, 910);
-                simulator.SimulateMouseMovement(571, 911);
-                Thread.Sleep(1000);
-                simulator.SimulateMousePress(MouseButton.Button1);
-                simulator.SimulateMouseRelease(MouseButton.Button1);
-                Console.WriteLine("Crafting...");
-
-                crafting = true;
-                goto startcraft;
-            }
-        }
+        
 
         public static void SetWebhook()
         {
@@ -362,7 +168,7 @@ namespace MacroForSols
 
         public static void AutoCollect()
         {
-           
+
             for (; ; )
             {
                 Focus();
@@ -394,46 +200,12 @@ namespace MacroForSols
             }
         }
 
-        public static void Rotate()
-        {
-
-            for (; ; )
-            {
-                Focus();
-                int i = 1;
-                for (; ; )
-                {
-                    Movement.CollectAll();
-                    Console.WriteLine("Loop Done");
-                    RobloxRunning();
-                    i++;
-                    if (i > 10) // Collects 10 times, crafts and reconnects to roblox
-                        break;
-                }
-
-                GildedCraft();
-
-                Process[] pArry = Process.GetProcesses();
-
-                foreach (Process p in pArry)
-                {
-                    string s = p.ProcessName;
-                    s = s.ToLower();
-                    if (s.CompareTo("RobloxPlayerBeta") == 0)
-                    {
-                        p.Kill();
-                        KillingProcessHook();
-                    }
-                }
-                Console.WriteLine("Killed roblox for rejoining...");
-                RobloxRunning();
-            }
-        }
+       
 
         public static void AutoCraft()
         {
             Focus();
-            GildedCraft();
+            Movement.GildedCraft();
             RobloxRunning();
 
         }
@@ -449,7 +221,7 @@ namespace MacroForSols
 
 
             }
-            else 
+            else
             {
                 Console.Clear();
                 Console.WriteLine("Make sure you have (Divinus, Gilded, Exotic) on auto equip via game");
@@ -652,12 +424,108 @@ namespace MacroForSols
             );
         }
 
+        public static void WebhookStart()
+        {
+            sendDiscordWebhook(
+                File.ReadAllText(@"./config/Webhook.txt"),
+                "{\"username\": \"Sute's Macro\",\"embeds\":[    {\"description\":\"Starting macro...\", \"title\":\"\", \"color\":6618908}]  }"
+            );
+        }
+        public static void WebhookLaunch()
+        {
+            sendDiscordWebhook(
+                File.ReadAllText(@"./config/Webhook.txt"),
+                "{\"username\": \"Sute's Macro\",\"embeds\":[    {\"description\":\"Launching software...\", \"title\":\"\", \"color\":6618908}]  }"
+            );
+        }
         public static void ResetKeys()
         {
+            var simulator = new EventSimulator(); // For mouse hooks
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.A, KeyFlags.Up);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Up);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Up);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Up);
+            simulator.SimulateMouseRelease(MouseButton.Button1);
+        }
+
+        public static void SetStatus1()
+        {
+            MenuCollection menus = MenuGenerator.CreateMenuCollection();
+            Console.Clear();
+            Console.WriteLine("Enable Auto Collect?");
+
+            Console.Write("Y/N: ");
+            var Result = Console.ReadLine();
+
+            if (Result.ToString() == "y")
+            {
+                Console.WriteLine("Turning On...");
+
+                var Path = "on";
+                using (FileStream fs = File.Create(@".\Config\Status1.txt"))
+                {
+                    char[] value = Path.ToCharArray();
+                    fs.Write(Encoding.UTF8.GetBytes(value), 0, value.Length);
+                }
+                Console.Clear();
+                menus.ShowMenu(2);
+            }
+            else if (Result.ToString() == "n")
+            {
+                ;
+                var Path = "off";
+                using (FileStream fs = File.Create(@".\Config\Status1.txt"))
+                {
+                    char[] value = Path.ToCharArray();
+                    fs.Write(Encoding.UTF8.GetBytes(value), 0, value.Length);
+                }
+                Console.Clear();
+                menus.ShowMenu(2);
+            }
+            else
+            {
+                Console.WriteLine("Type either Y or N, state remains...");
+            }
+        }
+
+        public static void SetStatus2()
+        {
+            MenuCollection menus = MenuGenerator.CreateMenuCollection();
+            Console.Clear();
+            Console.WriteLine("Enable Auto Craft?");
+
+            Console.Write("Y/N: ");
+            var Result = Console.ReadLine();
+
+            if (Result.ToString() == "y")
+            {
+                Console.WriteLine("Turning On...");
+
+                var Path = "on";
+                using (FileStream fs = File.Create(@".\Config\Status2.txt"))
+                {
+                    char[] value = Path.ToCharArray();
+                    fs.Write(Encoding.UTF8.GetBytes(value), 0, value.Length);
+                }
+                Console.Clear();
+                menus.ShowMenu(2);
+            }
+            else if (Result.ToString() == "n")
+            {
+                ;
+                var Path = "off";
+                using (FileStream fs = File.Create(@".\Config\Status2.txt"))
+                {
+                    char[] value = Path.ToCharArray();
+                    fs.Write(Encoding.UTF8.GetBytes(value), 0, value.Length);
+                }
+                Console.Clear();
+                menus.ShowMenu(2);
+            }
+            else
+            {
+                Console.WriteLine("Type either Y or N, state remains...");
+            }
         }
     }
 }
