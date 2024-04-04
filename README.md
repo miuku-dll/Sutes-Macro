@@ -51,8 +51,7 @@ About
 - [Sute's Server (Discord Server)](https://discord.gg/SHZ53AJsSc)
 
 Sute's Macro is a Open-Source Tool.
-AHK Script.
-Written in C#, with .NET Framework 6.0 (soon)
+Written in C#, with .NET Framework 8.0 (soon)
 
 The Sute's Macro Releases Format is: (dd/MM/yyyy)
 The Sute's Macro Project is under the MIT License.
