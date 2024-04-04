@@ -28,7 +28,8 @@ To install the built application first<br>
 <br>
 
 ### Make sure you have these files before running the .exe <br>
-![Screenshot_41](https://github.com/yurkyu/Sutes-Macro/assets/80363046/3df3cd89-df4a-4a35-8488-a843ba76a68a)
+![Screenshot_45](https://github.com/yurkyu/Sutes-Macro/assets/80363046/3b36c5ce-1b4f-467b-8763-5cf401a6001d)
+
 
 ## Browser compatibility <br>
 
