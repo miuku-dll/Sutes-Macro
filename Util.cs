@@ -376,8 +376,12 @@ namespace MacroForSols
         public static void SetStatus1()
         {
             MenuCollection menus = MenuGenerator.CreateMenuCollection();
+            string IsOn = File.ReadAllText(@".\Config\Status1.txt");
             Console.Clear();
+            Console.WriteLine("Current status: " + IsOn);
+            Thread.Sleep(1000);
             Console.WriteLine("Enable Auto Collect?");
+
 
             Console.Write("Y/N: ");
             var Result = Console.ReadLine();
@@ -416,7 +420,10 @@ namespace MacroForSols
         public static void SetStatus2()
         {
             MenuCollection menus = MenuGenerator.CreateMenuCollection();
+            string IsOn = File.ReadAllText(@".\Config\Status2.txt");
             Console.Clear();
+            Console.WriteLine("Current status: " + IsOn);
+            Thread.Sleep(1000);
             Console.WriteLine("Enable Auto Craft?");
 
             Console.Write("Y/N: ");
