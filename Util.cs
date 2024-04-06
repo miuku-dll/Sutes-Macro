@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Net;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
+using CShauto;
 using CSInputs.Enums;
 using SharpHook;
 using SharpHook.Native;
+using SharpHook.Testing;
 
 namespace MacroForSols
 {
@@ -459,5 +462,6 @@ namespace MacroForSols
                 Console.WriteLine("Type either Y or N, state remains...");
             }
         }
+
     }
 }

@@ -6,6 +6,8 @@ using System.Text;
 using DiscordRPC;
 using DiscordRPC.Logging;
 using MacroForSols;
+using SharpHook;
+using static System.Net.Mime.MediaTypeNames;
 
 
 namespace main
@@ -13,7 +15,7 @@ namespace main
     class Program // Handles main functions
     {
         private static bool _isExecutedFirst = false;
-        private static bool skip = false;
+        private static bool skip = true;
         private static bool running = false;
 
         public static DiscordRpcClient client;
@@ -313,6 +315,7 @@ namespace main
 
         public static void Main(string[] args)
         {
+
             static void Update()
             {
                 client.SetPresence(new RichPresence()
@@ -356,6 +359,7 @@ namespace main
         Skipped:
             menus.ShowMenu(1);
             Console.ReadKey();
+
         }
         
     }

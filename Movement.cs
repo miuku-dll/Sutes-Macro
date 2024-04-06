@@ -74,35 +74,24 @@ namespace MacroForSols
                 if (i > 31)
                     break;
             }
-            Thread.Sleep(500);
-
-            // Resetting character
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Escape);
-            Thread.Sleep(500);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.R);
-            Thread.Sleep(500);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Return);
-            Console.WriteLine("Reset character");
-            Util.WebhookReset();
-            Thread.Sleep(2500);
-
+            Thread.Sleep(1000);
             // Resetting location
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Down);
-            Thread.Sleep(1500);
+            Thread.Sleep(500);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Up);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Down);
-            Thread.Sleep(1000);
+            Thread.Sleep(1500);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Down);
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Up);
             Thread.Sleep(10);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Up);
-            Thread.Sleep(100);
+            Thread.Sleep(1000);
 
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Down);
-            Thread.Sleep(1300);
+            Thread.Sleep(2600);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Up);
-            Thread.Sleep(50);
+            Thread.Sleep(100);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.A, KeyFlags.Down);
             Thread.Sleep(5000);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.A, KeyFlags.Up);
@@ -119,9 +108,9 @@ namespace MacroForSols
             Console.WriteLine("Done collecting items");
             Thread.Sleep(100);
 
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Down);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Down);
             Thread.Sleep(500);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Up);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Up);
 
             // Collecting items
             Thread.Sleep(100);
@@ -153,23 +142,19 @@ namespace MacroForSols
             Thread.Sleep(300);
 
             // Resetting character
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Escape);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Down);
             Thread.Sleep(500);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.R);
-            Thread.Sleep(500);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Return);
-            Console.WriteLine("Reset character");
-            Util.WebhookReset();
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Up);
             Thread.Sleep(2500);
 
             // Resetting location
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Down);
-            Thread.Sleep(1500);
+            Thread.Sleep(700);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Up);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Down);
-            Thread.Sleep(1000);
+            Thread.Sleep(1500);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Down);
-            Thread.Sleep(1000);
+            Thread.Sleep(1500);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Up);
             Thread.Sleep(10);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Up);
@@ -177,29 +162,29 @@ namespace MacroForSols
 
             // Moving to house's tree
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Down);
-            Thread.Sleep(600);
+            Thread.Sleep(1300);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Up);
             Thread.Sleep(10);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Down);
-            Thread.Sleep(600);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Down);
-            Thread.Sleep(100);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Up);
-            Thread.Sleep(700);
+            Thread.Sleep(1200);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Up);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Down);
-            Thread.Sleep(500);
+            Thread.Sleep(700);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Down);
             Thread.Sleep(100);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Up);
             Thread.Sleep(700);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Down);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Down); // Eio toimi
             Thread.Sleep(100);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Up);
             Thread.Sleep(1000);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Down); // Eio toimi
+            Thread.Sleep(100);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Up);
+            Thread.Sleep(600);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Up);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.A, KeyFlags.Down);
-            Thread.Sleep(1500);
+            Thread.Sleep(1400);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.A, KeyFlags.Up);
 
             // Collecting items
@@ -216,23 +201,16 @@ namespace MacroForSols
 
             // Moving into house
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Down);
-            Thread.Sleep(1000);
+            Thread.Sleep(1900);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Up);
             Thread.Sleep(10);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Down);
-            Thread.Sleep(700);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Down);
-            Thread.Sleep(100);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Up);
-            Thread.Sleep(600);
+            Thread.Sleep(1700);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Up);
             Thread.Sleep(10);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Down);
-            Thread.Sleep(300);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Up);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.I, KeyFlags.Down);
-            Thread.Sleep(50);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.I, KeyFlags.Up);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.A, KeyFlags.Down);
+            Thread.Sleep(1000);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.A, KeyFlags.Up);
 
             // Collecting items
             Thread.Sleep(100);
@@ -245,55 +223,48 @@ namespace MacroForSols
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
             Console.WriteLine("Done collecting items");
             Thread.Sleep(100);
+            ResetCam();
 
             Util.ResetKeys();
 
-            CShauto.Mouse.Move(962, 598);
-            CShauto.Mouse.Move(960, 595);
-            Thread.Sleep(500);
-
-            CShauto.Mouse.Scroll(150);
-
-            Thread.Sleep(2000);
-            for (; ; )
-            {
-                CShauto.Mouse.Scroll(-150); // UnitScroll by default
-                Thread.Sleep(200);
-                i++;
-                if (i > 8)
-                    break;
-            }
-            Thread.Sleep(500);
-
             // Resetting character
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Escape);
-            Thread.Sleep(500);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.R);
-            Thread.Sleep(500);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Return);
-            Console.WriteLine("Reset character");
-            Util.WebhookReset();
-            Thread.Sleep(2500);
-
-            // Resetting location
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Down);
-            Thread.Sleep(1500);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Up);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Down);
-            Thread.Sleep(1000);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Down);
             Thread.Sleep(1000);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Up);
             Thread.Sleep(10);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Down);
+            Thread.Sleep(1600);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Up);
+            Thread.Sleep(10);
+
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Down);
+            Thread.Sleep(5000);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Up);
+            
+            
+            Console.WriteLine("Reset character");
+            Util.WebhookReset();
+            Thread.Sleep(500);
+
+            // Resetting location
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Down);
+            Thread.Sleep(500);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Up);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Down);
+            Thread.Sleep(1500);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Down);
+            Thread.Sleep(2000);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Up);
+            Thread.Sleep(10);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Up);
-            Thread.Sleep(100);
+            Thread.Sleep(1000);
 
 
             // Moving to tree
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Down);
             Thread.Sleep(200);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Down);
-            Thread.Sleep(4000);
+            Thread.Sleep(4300);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Up);
             Thread.Sleep(500);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Up);
@@ -312,6 +283,9 @@ namespace MacroForSols
 
             // Moving to the other tree
 
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Down);
+            Thread.Sleep(500);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Up);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Down);
             Thread.Sleep(200);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Down);
@@ -342,21 +316,30 @@ namespace MacroForSols
             Thread.Sleep(100);
 
             // Moving to the mountain
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Down);
-            Thread.Sleep(700);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Up);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Down);
-            Thread.Sleep(4400);
+            Thread.Sleep(1400);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Up);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.A, KeyFlags.Down);
             Thread.Sleep(500);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Down);
-            Thread.Sleep(4200);
-            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.A, KeyFlags.Up);
+            Thread.Sleep(700);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Up);
+            Thread.Sleep(800);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.A, KeyFlags.Up);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Down);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Down);
+            Thread.Sleep(2300);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.Space, KeyFlags.Up);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.W, KeyFlags.Up);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.A, KeyFlags.Down);
+            Thread.Sleep(500);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.A, KeyFlags.Up);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Down);
-            Thread.Sleep(2000);
+            Thread.Sleep(900);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Up);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.A, KeyFlags.Down);
+            Thread.Sleep(200);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.A, KeyFlags.Up);
 
             // Collecting items
             Thread.Sleep(100);
@@ -369,6 +352,15 @@ namespace MacroForSols
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
             Console.WriteLine("Done collecting items");
             Thread.Sleep(100);
+
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Down);
+            Thread.Sleep(2000);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Down);
+            Thread.Sleep(1000);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.D, KeyFlags.Up);
+            Thread.Sleep(1000);
+            CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Up);
+            Thread.Sleep(1000);
 
         }
 
@@ -612,7 +604,7 @@ namespace MacroForSols
                     break;
             }
 
-            CShauto.Mouse.Scroll(-35);
+            CShauto.Mouse.Scroll(-5);
             Thread.Sleep(200);
 
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.F);
