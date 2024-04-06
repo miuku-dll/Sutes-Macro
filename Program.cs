@@ -15,7 +15,7 @@ namespace main
     class Program // Handles main functions
     {
         private static bool _isExecutedFirst = false;
-        private static bool skip = true;
+        private static bool skip = false;
         private static bool running = false;
 
         public static DiscordRpcClient client;
@@ -65,7 +65,7 @@ namespace main
                 }
                 else { }
 
-                if (File.Exists(PrivateServerFile))
+                if (File.Exists(CraftStatus))
                 {
                     goto Address;
                 }
