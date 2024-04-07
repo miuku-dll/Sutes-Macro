@@ -1,3 +1,2 @@
-- Real
-- ENT IIa
-- NO JOO MITA VCITTUA
+[*] Whole rebrand
+[+] New Graphical User Interface
