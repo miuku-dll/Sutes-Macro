@@ -335,7 +335,7 @@ namespace MacroForSols
             Thread.Sleep(500);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.A, KeyFlags.Up);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Down);
-            Thread.Sleep(900);
+            Thread.Sleep(1100);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.S, KeyFlags.Up);
             CSInputs.SendInput.Keyboard.Send(KeyboardKeys.A, KeyFlags.Down);
             Thread.Sleep(200);

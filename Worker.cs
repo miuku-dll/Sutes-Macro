@@ -24,6 +24,7 @@ namespace MacroForSols
 
         public static void Starting()
         {
+            Console.Clear();
             Util.Focus();
             Util.WebhookStart();
             Run();
